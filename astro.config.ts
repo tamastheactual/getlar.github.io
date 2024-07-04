@@ -9,7 +9,7 @@ export default defineConfig({
       ? 'https://brutal.elian.codes/'
       : process.env.VERCEL_URL
       ? `https://${process.env.VERCEL_URL}/`
-      : 'https://localhost:3000/',
+      : 'https://getlar.github.io',
   trailingSlash: 'ignore',
   integrations: [sitemap(), UnoCSS({ injectReset: true })],
   vite: {
