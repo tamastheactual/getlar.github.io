@@ -4,62 +4,89 @@ interface Props {
 }
 
 const navigationItems = [
-  { name: 'Home', url: '/' },
-  { name: 'Blog', url: '/blog/' },
+  { name: 'home', url: '/' },
+  { name: 'about', url: '/about/' },
+  { name: 'posts', url: '/blog/' },
+  { name: 'projects', url: '/project/' },
+  { name: 'cv', url: '/CV_TT_EN.pdf' },
 ];
 
 const socialIcons = [
   {
     name: 'GitHub',
-    url: 'https://github.com/eliancodes/brutal',
+    url: 'https://github.com/getlar',
     icon: 'i-uil-github',
   },
   {
-    name: 'Twitter',
-    url: 'https://www.twitter.com/eliancodes',
-    icon: 'i-uil-twitter',
+    name: 'Instagram',
+    url: 'https://www.instagram.com/a.takacs.tamas.m8/',
+    icon: 'i-uil-instagram',
   },
-  { name: 'RSS', url: '/feed.xml', icon: 'i-uil-rss' },
+  { name: 'LinkedIn', 
+    url: 'www.linkedin.com/in/ranuon', 
+    icon: 'i-uil-linkedin' },
 ];
 
 const { pageTitle } = Astro.props;
 ---
 
-<header class='border-b-4 border-black flex justify-between p-6 items-center'>
+<style>
+  #flashing-slash {
+    animation: flash 3s infinite;
+  }
+
+  @keyframes flash {
+    0%, 50%, 100% {
+      opacity: 1;
+    }
+    25%, 75% {
+      opacity: 0;
+    }
+  }
+  .a:hover {
+    color: var(--flashing);
+  }
+</style>
+
+<header class='border-b-3 border-black flex justify-between p-6 items-center bg-navbg'>
   {pageTitle && <h1 class='hidden'>{pageTitle}</h1>}
-  <a href='/' title='Back to Home'>
-    <p class='righteous md:text-5xl'>Brutal</p>
+  <a href='/' title='Back to Home' class='flex items-center'>
+    <p class='outfit text-xl md:text-2xl lg:text-4xl'> &gt;/getlar/</p>
+    <svg id="flashing-slash" width="30" height="30" viewBox="0 0 2 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="20" height="30" fill="var(--tcotta)"/>
+    </svg>
   </a>
   <nav class='hidden md:inline-block'>
     <h2 class='hidden'>Navigation</h2>
     <ul class='flex gap-8 poppins'>
-      {
-        navigationItems.map((item) => (
-          <li>
-            <a
-              class='text-lg font-medium hover:text-green hover:underline transition-all duration-150 ease-in-out'
-              href={item.url}
-              title={`Go to ${item.name}`}
-            >
-              {item.name}
-            </a>
-          </li>
-        ))
-      }
-      {
-        socialIcons.map((item) => (
-          <li>
-            <a
-              href={item.url}
-              class='hover:text-green hover:underline transition-all duration-150 ease-in-out'
-              target='_blank'
-              title={`'See @ElianCodes on ${item.name}`}
-            >
-              <div class:list={[item.icon, 'w-6 h-6']} />
-            </a>
-          </li>
-        ))
-      }
+      {navigationItems.map((item) => (
+        <li>
+          <a
+            class='text-lg font-medium hover:text-tcotta hover:underline transition-all duration-500 ease-in-out'
+            href={item.url}
+            title={`Go to ${item.name}`}
+          >
+            {item.name}
+          </a>
+        </li>
+      ))}
+      <li>
+        <svg id="pipe" width="10" height="30" viewBox="0 0 2 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="2" height="30" fill="currentColor"/>
+        </svg>
+      </li>
+      {socialIcons.map((item) => (
+        <li>
+          <a
+            href={item.url}
+            class='hover:text-tcotta hover:underline transition-all duration-500 ease-in-out'
+            target='_blank'
+            title={`See @getlar on ${item.name}`}
+          >
+            <div class:list={[item.icon, 'w-6 h-6']} />
+          </a>
+        </li>
+      ))}
     </ul>
   </nav>
   <nav class='md:hidden flex'>
