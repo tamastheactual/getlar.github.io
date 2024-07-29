@@ -44,8 +44,10 @@ const { backToTop = true } = Astro.props;
         Takács Tamás
       </a>
     </p>
-    <div class="logo-container mr-10">
-      <Fragment set:html={ElteLogo} />
+    <div class="hidden sm:block">
+      <div class="logo-container mr-10">
+        <Fragment set:html={ElteLogo} />
+      </div>
     </div>
   </div>
 </footer>

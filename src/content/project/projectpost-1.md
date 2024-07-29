@@ -1,15 +1,15 @@
 ---
-title: The Tragedy of Man and Socialism in Kádár's Hungary
+title: Scalable Reinforcement Learning in Multi-Agent Environments
 pubDate: 07/29/2024 20:00
 author: "Takács Tamás"
 tags:
-  - Hobby
-  - Animation
-  - Politics
-  - Hungary
-imgUrl: '../../assets/blog/mezga.jpg'
-description: Mézga Family
-layout: '../../layouts/BlogPost.astro'
+  - RL
+  - Multi-Agent
+  - Research
+  - Publication
+imgUrl: '../../assets/blog/RL.png'
+description: Novel reinforcement learning algorithms often face scalability and compatibility issues in multi-agent environments due to their optimization for single-agent settings. The lack of standardized methods for adaptation restricts their broader applicability, especially when dealing with rapidly changing numbers of controllable entities and massive scaling. Challenges include credit assignment, extensive memory usage, and increased computational time, leading to slow, destabilized training and suboptimal resource utilization. We propose a hybrid architecture, combining monolithic and distributed approaches, resulting in a 30-times reduction in model size and learning basic skills 24 times faster with 600-times fewer training examples compared to related works in the same environment. We also introduce trajectory separation, achieving a 3-times speed increase in training convergence.
+layout: '../../layouts/ProjectPost.astro'
 ---
 
 ## Deorum petiit ignis

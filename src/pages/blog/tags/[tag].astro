@@ -44,10 +44,11 @@ const { tag, blogposts } = Astro.props;
   description={`getlar blog | all posts tagged with ${tag}`}
   pageTitle={`brutal blog | blogposts tagged with ${tag}`}
 >
-  <main class='p-6 bg-white grid gap-4'>
+  <main class='bg-greyer p-6 min-h-screen'>
     <div class="ml-4">
       <Button color='var(--navbg)' href='/blog/'>&larr; Back to blog</Button>
     </div>
     <BlogList posts={blogposts} />
+    <div class=" bg-greyer"/>
   </main>
 </Layout>

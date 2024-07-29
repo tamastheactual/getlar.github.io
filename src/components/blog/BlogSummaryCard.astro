@@ -6,10 +6,10 @@ import Button from '@components/generic/Button.astro';
 
 interface Props {
   post: CollectionEntry<'blog'>;
-  color: string;
+  color?: string;
 }
 
-const { post, color } = Astro.props;
+const { post } = Astro.props;
 
 const pubDate = new Date(post.data.pubDate);
 const formattedDate = pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });

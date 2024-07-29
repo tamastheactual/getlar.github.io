@@ -1,9 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '@layouts/Default.astro';
-import BlogList from '@components/blog/BlogList.astro';
+import ProjectList from '@components/project/ProjectList.astro';
 
-const posts = await getCollection('blog').then((collection) =>
+const projects = await getCollection('project').then((collection) =>
   collection.reverse()
 );
 ---
@@ -13,8 +13,8 @@ const posts = await getCollection('blog').then((collection) =>
   description='getlar blog | on this page you can find a collection of blogposts'
   pageTitle='getlar blog'
 >
-  <main class='bg-greyer p-6 min-h-screen'>
-    <BlogList posts={posts} />
-    <div class=" bg-greyer"/>
+  <main class='bg-bgc p-6'>
+    <ProjectList projects={projects} />
+    <div class="h-[4vh] bg-bgc"/>
   </main>
 </Layout>

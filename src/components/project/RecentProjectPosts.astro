@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import BlogList from '../blog/BlogList.astro';
+import RecentProjectList from './RecentProjectList.astro';
 import Card  from '@components/generic/Card.astro';
 import Button from '@components/generic/Button.astro';
 
@@ -10,8 +10,8 @@ interface Props {
 
 const { count } = Astro.props;
 
-const posts = await getCollection('blog').then((posts) =>
-  posts.reverse().slice(0, count ?? 3)
+const projects = await getCollection('project').then((projects) =>
+projects.reverse().slice(0, count ?? 3)
 );
 ---
 
@@ -19,15 +19,15 @@ const posts = await getCollection('blog').then((posts) =>
   <Card color="var(--navbg)">
     <div class='flex justify-between items-start'>
       <h2 class='text-2xl md:text-4xl lg:text-6xl mb-4 mt-4 ml-4 outfit'>
-        Recent Blogposts
+        Recent Projects
       </h2>
       <div class='hidden md:block mr-5 mt-5'>
-        <Button href='/blog/' color='var(--bgcolor)'>Go to blog &rarr;</Button>
+        <Button href='/project/' color='var(--bgcolor)'>Go to projects &rarr;</Button>
       </div>
       <div class='block md:hidden'>
-        <Button href='/blog/'>to blog</Button>
+        <Button href='/project/' color='var(--bgcolor)'>to projects</Button>
       </div>
     </div>
-    <BlogList posts={posts} />
+    <RecentProjectList projects={projects} />
   </Card>
 </section>

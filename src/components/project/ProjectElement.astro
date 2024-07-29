@@ -1,0 +1,30 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+    project: CollectionEntry<'project'>;
+    color?: string;
+}
+
+const { project } = Astro.props;
+
+const pubDate = new Date(project.data.pubDate);
+const year = pubDate.getFullYear();
+const monthAndDay = pubDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+const title = project.data.title;
+---
+
+<div class="project space-y-2">
+    <div class="details flex items-center">
+        <div class="year text-1xl md:text-2xl lg:text-4xl font-mono text-gray-800">
+            {year}
+        </div>
+        <a href={`/project/${project.slug}/`} class="text-sm md:text-base lg:text-lg font-medium hover:text-tcotta hover:underline transition-all duration-500 ease-in-out text-textcolor poppins ml-4">
+            {title}
+        </a>
+        <div class="date text-xs md:text-sm lg:text-base font-mono text-gray-500 ml-auto">
+            {monthAndDay}
+        </div>
+    </div>
+    <div class="separator border-t border-gray-300 mt-2"></div>
+</div>

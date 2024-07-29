@@ -1,11 +1,10 @@
 ---
 import Layout from './Default.astro';
 import AboutContent from '@components/about/AboutContent.astro';
-import RecentBlogPosts from '@components/generic/RecentBlogPosts.astro';
 
 const ogImage = new URL(`/v1/generate/og/${Astro.params.slug}.png`, Astro.url);
 
-const { content, headings } = Astro.props;
+const { content } = Astro.props;
 const { title, description } = content;
 ---
 
@@ -21,8 +20,5 @@ const { title, description } = content;
       </AboutContent>
     </div>
   </main>
-  <section class='p-3 bg-bgc'>
-    <RecentBlogPosts count={3} />
-  </section>
   <div class="h-[5vh] bg-bgc"/>
 </Layout>
