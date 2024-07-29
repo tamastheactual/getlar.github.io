@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import Pill from '@components/generic/Pill.astro';
 
 interface Props {
     project: CollectionEntry<'project'>;
@@ -14,17 +15,65 @@ const monthAndDay = pubDate.toLocaleDateString('en-US', { month: 'short', day: '
 const title = project.data.title;
 ---
 
+<style>
+    /* Default styles: Pills are shown */
+    .pills-container {
+      display: flex;
+    }
+  
+    /* Hide Pills on screens narrower than 768px */
+    @media (max-width: 1024px) {
+      .pills-container {
+        display: none;
+      }
+    }
+  </style>
+
 <div class="project space-y-2">
-    <div class="details flex items-center">
-        <div class="year text-1xl md:text-2xl lg:text-4xl font-mono text-gray-800">
+    <div class="details flex items-center justify-between">
+        <!-- Year Section -->
+        <div class="year text-1xl md:text-2xl lg:text-4xl font-mono text-gray-800 pr-6">
             {year}
         </div>
+
+        <!-- Centered Pills Section -->
+        <div class='pills-container flex flex-grow items-center justify-start'>
+            <ul class='flex gap-2'>
+              {
+                project.data.tags.map((tag) => {
+                  return (
+                    <li>
+                      <a class="poppins" href={`/project/tags/${tag.toLowerCase()}/`}>
+                        <Pill color='var(--navbg)'>{tag}</Pill>
+                      </a>
+                    </li>
+                  );
+                })
+              }
+            </ul>
+        </div>
+
+        <!-- Title Section -->
         <a href={`/project/${project.slug}/`} class="text-sm md:text-base lg:text-lg font-medium hover:text-tcotta hover:underline transition-all duration-500 ease-in-out text-textcolor poppins ml-4">
             {title}
         </a>
+
+        <!-- Draft Label Section -->
+        <div class='flex items-center pl-6'>
+            {
+              project.data.draft && (
+                <span class='bg-green rounded-full border-2 py-1 px-4 text-sm border-black card-shadow'>
+                  Draft
+                </span>
+              )
+            }
+        </div>
+
+        <!-- Date Section -->
         <div class="date text-xs md:text-sm lg:text-base font-mono text-gray-500 ml-auto">
             {monthAndDay}
         </div>
     </div>
     <div class="separator border-t border-gray-300 mt-2"></div>
 </div>
+

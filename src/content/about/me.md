@@ -1,5 +1,5 @@
 ---
-title: About Me
+title: about
 pubDate: 29/07/2024 20:00
 author: "Takács Tamás"
 description: A short description about myself, hobbies and research.

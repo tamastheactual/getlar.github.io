@@ -1,0 +1,54 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '@layouts/Default.astro';
+import ProjectList from '@components/project/ProjectList.astro';
+import type { CollectionEntry } from 'astro:content';
+import Button from '@components/generic/Button.astro';
+
+export async function getStaticPaths() {
+    const projects = await getCollection('project').then((collection) =>
+    collection.reverse()
+    );
+  
+  const tags: string[] = [];
+
+  projects.forEach((project) => {
+    project.data.tags.forEach((tag) => {
+      tags.push(tag.toLowerCase());
+    });
+  });
+  return Array.from(new Set(tags)).map((tag) => {
+    return {
+      params: { tag },
+      props: {
+        tag,
+        projects: projects.filter((project) =>
+        project.data.tags.map((tag) => tag.toLowerCase()).includes(tag)
+        ),
+      },
+    };
+  });
+}
+
+interface Props {
+  tag: string;
+  projects: CollectionEntry<'project'>[];
+}
+
+const { tag, projects } = Astro.props;
+
+---
+
+<Layout
+  title={`projects: ${tag}`}
+  description={`getlar projects | all projects tagged with ${tag}`}
+  pageTitle={`brutal projects | projects tagged with ${tag}`}
+>
+  <main class='bg-bgc p-6'>
+    <div class="ml-4">
+        <Button color='var(--navbg)' href='/project/'>&larr; Back to projects</Button>
+    </div>
+    <ProjectList projects={projects} />
+    <div class="h-[4vh] bg-bgc"/>
+  </main>
+</Layout>
