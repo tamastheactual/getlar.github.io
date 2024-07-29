@@ -9,11 +9,12 @@ const posts = await getCollection('blog').then((collection) =>
 ---
 
 <Layout
-  title='Blog'
-  description='Brutal Blog | On this page you can find a collection of blogposts'
-  pageTitle='Brutal Blog'
+  title='blog'
+  description='getlar blog | on this page you can find a collection of blogposts'
+  pageTitle='getlar blog'
 >
-  <main class='bg-green p-6'>
+  <main class='bg-white p-6'>
     <BlogList posts={posts} />
+    <div class="h-[4vh] bg-white"/>
   </main>
 </Layout>

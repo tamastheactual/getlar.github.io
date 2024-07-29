@@ -15,13 +15,14 @@ const { title, description } = content;
   description={description as string}
   ogImage={ogImage}
 >
-  <main class='p-6 lg:grid lg:grid-cols-3 flex justify-center'>
+  <main class='p-6 lg:grid lg:grid-cols-3 flex justify-center bg-bgc color-textcolor'>
     <BlogSideBar headings={headings} />
     <BlogContent content={content}>
       <slot />
     </BlogContent>
   </main>
-  <section class='p-6'>
-    <RecentBlogPosts count={6} />
+  <section class='p-3 bg-bgc'>
+    <RecentBlogPosts count={3} />
   </section>
+  <div class="h-[5vh] bg-bgc"/>
 </Layout>

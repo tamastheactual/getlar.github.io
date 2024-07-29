@@ -1,4 +1,6 @@
 ---
+import ElteLogo from '../../assets/elte.svg?raw';
+
 export interface Props {
   backToTop?: boolean;
 }
@@ -6,45 +8,71 @@ export interface Props {
 const { backToTop = true } = Astro.props;
 ---
 
-{
-  backToTop && (
-    <button
-      class:list={[
-        backToTop ? `backToTop` : null,
-        'transition-300 z-50 opacity-0 fixed flex bottom-[10px] right-[30px] w-10 h-10 bg-navbg border border-black card-shadow',
-      ]}
+{backToTop && (
+  <button
+    class:list={[
+      backToTop ? `backToTop` : null,
+      'transition-300 z-50 opacity-0 fixed flex bottom-[10px] right-[30px] w-10 h-10 bg-tcotta border border-black card-shadow',
+    ]}
+  >
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      fill='none'
+      viewBox='0 0 24 24'
+      height='100%'
+      width='100%'
+      stroke-width='1.5'
+      stroke='currentColor'
     >
-      <svg
-        xmlns='http://www.w3.org/2000/svg'
-        fill='none'
-        viewBox='0 0 24 24'
-        height='100%'
-        width='100%'
-        stroke-width='1.5'
-        stroke='currentColor'
-      >
-        <path
-          stroke-linecap='round'
-          stroke-linejoin='round'
-          d='m4.5 15.75 7.5-7.5 7.5 7.5'
-        />
-      </svg>
-    </button>
-  )
-}
+      <path
+        stroke-linecap='round'
+        stroke-linejoin='round'
+        d='m4.5 15.75 7.5-7.5 7.5 7.5'
+      />
+    </svg>
+  </button>
+)}
 
-<footer class='bg-navbg text-tcotta p-6'>
-  <h2 class='hidden'>Footer</h2>
-  <p class='outfit'>
-    Personal Website:  <a
-      href='https://www.linkedin.com/in/ranuon/'
-      target='_blank'
-      class='text-blue'>Takács Tamás</a
-    >
-  </p>
+<footer class='bg-navbg text-textcolor p-1 w-full fixed bottom-0 border-t-2 border-textcolor'>
+  <div class="footer-content flex justify-between items-center">
+    <p class='outfit'>
+      Personal Website: <a
+        href='https://www.linkedin.com/in/ranuon/'
+        target='_blank'
+        class='text-tcotta'
+      >
+        Takács Tamás
+      </a>
+    </p>
+    <div class="logo-container mr-10">
+      <Fragment set:html={ElteLogo} />
+    </div>
+  </div>
 </footer>
 
 <style>
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 1rem; /* Adjust padding as needed */
+  }
+
+  .footer-content p {
+    margin: 0;
+  }
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo-container svg {
+    width: 100px; /* Adjust size as needed */
+    height: auto;
+  }
+
   .backToTop.active {
     opacity: 1;
   }

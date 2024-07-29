@@ -1,0 +1,32 @@
+---
+interface Props {
+  color?: string | undefined;
+}
+
+const { color } = Astro.props;
+---
+
+<style define:vars={{ color: color }}>
+  span.brutal-pill {
+    filter: drop-shadow(3px 3px 0 rgb(0 0 0 / 1));
+    user-select: none;
+    background-color: var(--color);
+    border-radius: 9999px;
+    border: 2px solid var(--textcolor);
+    padding: 0.25rem 0.75rem;
+    transition: all;
+    transition-duration: 0.5s;
+    animation: ease-in-out;
+    font-size: small;
+  }
+
+  span.brutal-pill:hover {
+    filter: drop-shadow(0px 0px 0 rgb(0 0 0 / 1));
+    background-color: var(--tcotta);
+    color: white;
+  }
+</style>
+
+<span class='brutal-pill'>
+  <slot />
+</span>

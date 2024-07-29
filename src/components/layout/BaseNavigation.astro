@@ -8,7 +8,7 @@ const navigationItems = [
   { name: 'about', url: '/about/' },
   { name: 'posts', url: '/blog/' },
   { name: 'projects', url: '/project/' },
-  { name: 'cv', url: '/CV_TT_EN.pdf' },
+  { name: 'cv', url: '/cv.pdf' },
 ];
 
 const socialIcons = [
@@ -48,10 +48,10 @@ const { pageTitle } = Astro.props;
   }
 </style>
 
-<header class='border-b-3 border-black flex justify-between p-6 items-center bg-navbg'>
+<header class='border-b-2 border-textcolor flex justify-between p-4 items-center bg-navbg'>
   {pageTitle && <h1 class='hidden'>{pageTitle}</h1>}
   <a href='/' title='Back to Home' class='flex items-center'>
-    <p class='outfit text-xl md:text-2xl lg:text-4xl'> &gt;/getlar/</p>
+    <p class='outfit text-xl md:text-2xl lg:text-4xl text-textcolor'> &gt;/getlar/</p>
     <svg id="flashing-slash" width="30" height="30" viewBox="0 0 2 30" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect width="20" height="30" fill="var(--tcotta)"/>
     </svg>
@@ -62,9 +62,11 @@ const { pageTitle } = Astro.props;
       {navigationItems.map((item) => (
         <li>
           <a
-            class='text-lg font-medium hover:text-tcotta hover:underline transition-all duration-500 ease-in-out'
+            class='text-lg font-medium hover:text-tcotta hover:underline transition-all duration-500 ease-in-out text-textcolor'
             href={item.url}
             title={`Go to ${item.name}`}
+            target={item.name === 'cv' ? '_blank' : '_self'}
+            rel={item.name === 'cv' ? 'noopener noreferrer' : undefined}
           >
             {item.name}
           </a>
@@ -72,14 +74,14 @@ const { pageTitle } = Astro.props;
       ))}
       <li>
         <svg id="pipe" width="10" height="30" viewBox="0 0 2 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="2" height="30" fill="currentColor"/>
+          <rect width="2" height="30" fill="#333333"/>
         </svg>
       </li>
       {socialIcons.map((item) => (
         <li>
           <a
             href={item.url}
-            class='hover:text-tcotta hover:underline transition-all duration-500 ease-in-out'
+            class='hover:text-tcotta hover:underline transition-all duration-500 ease-in-out text-textcolor'
             target='_blank'
             title={`See @getlar on ${item.name}`}
           >
@@ -96,3 +98,4 @@ const { pageTitle } = Astro.props;
     </ul>
   </nav>
 </header>
+

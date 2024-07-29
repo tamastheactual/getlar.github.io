@@ -10,15 +10,15 @@ const { color } = Astro.props;
   div.fixed-color-card {
     background-color: var(--color);
     border-radius: 0.5rem;
-    border: 3px solid black;
-    filter: drop-shadow(7px 7px 0 rgb(0 0 0 / 1));
+    border: 2px solid var(--textcolor);
     transition: all;
     padding: 1rem;
+    color: var(--textcolor);
     transition-duration: 0.5s;
     animation: ease-in-out;
   }
   div.fixed-color-card:hover {
-    filter: drop-shadow(5px 5px 0 rgb(0 0 0 / 1));
+    filter: drop-shadow(0px 0px 0 rgb(0 0 0 / 1));
   }
 </style>
 

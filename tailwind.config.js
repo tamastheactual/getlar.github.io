@@ -7,6 +7,7 @@ module.exports = {
         tcotta: '#89430a',
         navbg: '#f4eee0',
         bgc: '#edebe6',
+        textcolor: '#333333',
       },
     },
 	},

@@ -1,13 +1,14 @@
 ---
-title: Blogpost 2
-pubDate: 12/31/2022 12:05
-author: "Elian Van Cutsem"
+title: The Tragedy of Man and Socialism in Kádár's Hungary
+pubDate: 07/29/2024 20:00
+author: "Takács Tamás"
 tags:
-  - Astro
-  - WebDev
-  - Programming
-imgUrl: '../../assets/astro.jpeg'
-description: Lorem markdownum longo os thyrso telum, continet servat fetus nymphae, vox nocte sedesque, decimo. Omnia esse, quam sive; conplevit illis indestrictus admovit dedit sub quod protectus, impedit non.
+  - Hobby
+  - Animation
+  - Politics
+  - Hungary
+imgUrl: '../../assets/blog/mezga.jpg'
+description: Mézga Family
 layout: '../../layouts/BlogPost.astro'
 ---
 
