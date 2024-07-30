@@ -1,7 +1,7 @@
 ---
 title: The Tragedy of Man and Socialism in Kádár's Hungary
 pubDate: 07/29/2024 20:00
-author: "Takács Tamás"
+author: "Takacs Tamas"
 tags:
   - Hobby
   - Animation

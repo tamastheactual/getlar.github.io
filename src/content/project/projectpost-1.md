@@ -1,7 +1,7 @@
 ---
 title: Scalable Reinforcement Learning in Multi-Agent Environments
 pubDate: 07/29/2024 20:00
-author: "Takács Tamás"
+author: "Takacs Tamas"
 tags:
   - RL
   - MA
