@@ -1,5 +1,6 @@
 ---
 import ElteLogo from '../../assets/elte.svg?raw';
+import MiLogo from '../../assets/mi.svg?raw';
 
 export interface Props {
   backToTop?: boolean;
@@ -44,6 +45,8 @@ const { backToTop = true } = Astro.props;
     </p>
     <div class="hidden sm:block">
       <div class="logo-container mr-10">
+        <Fragment set:html={MiLogo}/>
+        <div class="mr-4"/>
         <Fragment set:html={ElteLogo} />
       </div>
     </div>
