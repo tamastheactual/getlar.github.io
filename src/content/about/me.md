@@ -12,7 +12,7 @@ layout: '../../layouts/About.astro'
 
 I am a PhD student in Artificial Intelligence with three years of experience working with `Deep Neural Networks`, `Machine Learning Models`, `Graph Embedding Algorithms`, `Graph Convolutional Networks`, `Reinforcement Learning Models`, `Large Language Models` (LLMs), and `MLOps`.
 
-I regularly participate in online hackathons and `Kaggle competitions`. My current research focuses on scalability in `Multi-Agent Reinforcement Learning (MARL)`, as well as `Machine Unlearning` and its applicability in `Reinforcement Learning` (RL), `Natural Language Processing` (NLP), and `Complex Systems`. I am passionate and resilient about the work I do.
+I regularly participate in online hackathons and `Kaggle competitions`. My current research focuses on scalability in `Multi-Agent Reinforcement Learning`, as well as `Machine Unlearning` and its applicability in `Reinforcement Learning` (RL), `Natural Language Processing` (NLP), and `Complex Systems`. I am passionate and resilient about the work I do.
 
 Lately, I've been busy learning the ropes of `GitHub Actions`, `KubeFlow`, `Docker`, `Kubernetes`, and also getting familiarized with Cloud Technologies like `AWS Glue`, `Amazon SageMaker`, `GCloud AutoML`, and `GCloud DataStore`. 
 
