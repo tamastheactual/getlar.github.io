@@ -36,12 +36,10 @@ const { backToTop = true } = Astro.props;
 <footer class='bg-navbg text-textcolor p-1 w-full fixed bottom-0 border-t-2 border-textcolor'>
   <div class="footer-content flex justify-between items-center">
     <p class='outfit'>
-      Personal Website: <a
-        href='https://www.linkedin.com/in/ranuon/'
-        target='_blank'
-        class='text-tcotta'
-      >
-        Takács Tamás
+      Personal Website: 
+      <a href='https://www.linkedin.com/in/ranuon/' target='_blank' class='text-tcotta inline-flex items-center'>
+        Buy Me a Ko-fi 
+        <span class="i-uil:coffee w-4 h-4 ml-1 inline-block"></span>
       </a>
     </p>
     <div class="hidden sm:block">
@@ -51,6 +49,8 @@ const { backToTop = true } = Astro.props;
     </div>
   </div>
 </footer>
+
+
 
 <style>
   .footer-content {
