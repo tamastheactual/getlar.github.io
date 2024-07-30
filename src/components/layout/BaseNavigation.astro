@@ -93,25 +93,22 @@ const { pageTitle } = Astro.props;
   </nav>
   <nav class='md:hidden flex inline-block'>
     <h2 class='hidden'>Mobile Navigation</h2>
-    <ul class="flex gap-2 poppins">
-      <li>
-        <a 
-          class='text-lg font-medium hover:text-tcotta hover:underline transition-all duration-500 ease-in-out text-textcolor'
-          href='/about/'>About
-        </a>
-      </li>
-      <li>
-        <a 
-          class='text-lg font-medium hover:text-tcotta hover:underline transition-all duration-500 ease-in-out text-textcolor'
-          href='/blog/'>Blog
-        </a>
-      </li>
-      <li>
-        <a 
-          class='text-lg font-medium hover:text-tcotta hover:underline transition-all duration-500 ease-in-out text-textcolor'
-          href='/project/'>Project
-        </a>
-      </li>
+    <ul class="flex gap-3 poppins">
+      {navigationItems.map((item) => (
+        item.name !== 'home' && (
+          <li>
+            <a
+              class='text-lg font-medium hover:text-tcotta hover:underline transition-all duration-500 ease-in-out text-textcolor'
+              href={item.url}
+              title={`Go to ${item.name}`}
+              target={item.name === 'cv' ? '_blank' : '_self'}
+              rel={item.name === 'cv' ? 'noopener noreferrer' : undefined}
+            >
+              {item.name}
+            </a>
+          </li>
+        )
+      ))}
     </ul>
   </nav>
 </header>
