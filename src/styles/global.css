@@ -33,7 +33,7 @@ html {
 }
 
 ::-webkit-scrollbar {
-  width: 22px;
+  width: 0px;
   background-color: var(--navbg);
 }
 

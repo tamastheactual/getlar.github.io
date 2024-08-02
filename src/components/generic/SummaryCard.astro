@@ -4,23 +4,33 @@ import { Image } from 'astro:assets';
 
 interface Props {
   title: string;
-  imgSrc: ImageMetadata;
+  imgSrcLg: ImageMetadata;
+  imgSrcSm: ImageMetadata;
   imgAlt: string;
   description: string;
 }
 
-const { title, imgAlt, imgSrc, description } = Astro.props;
+const { title, imgSrcLg, imgSrcSm, imgAlt, description } = Astro.props;
 ---
 
 <Card color='var(--bgcolor)'>
   <h3 class='poppins font-semibold text-lg md:text-xl'>{title}</h3>
   <div class='rounded-lg border-2 border-textcolor my-4 h-100'>
+    <!-- Mobile Image -->
     <Image
-      src={imgSrc}
+      src={imgSrcSm}
       alt={imgAlt}
       width={800}
       height={400}
-      class='rounded h-full w-full object-cover'
+      class='rounded h-full w-full object-cover md:hidden'
+    />
+    <!-- Desktop Image -->
+    <Image
+      src={imgSrcLg}
+      alt={imgAlt}
+      width={800}
+      height={400}
+      class='rounded h-full w-full object-cover hidden md:block'
     />
   </div>
   <p class='poppins text-justify'>{description}</p>

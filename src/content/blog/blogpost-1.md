@@ -1,48 +1,30 @@
 ---
 title: The Tragedy of Man and Socialism in Kádár's Hungary
 pubDate: 07/29/2024 20:00
-author: "Takacs Tamas"
+lastModDate: 07/29/2024 20:00
+author: "Tamás Takács"
 tags:
-  - Hobby
-  - Animation
+  - Off-Topic
   - Politics
   - Hungary
-imgUrl: '../../assets/blog/mezga.jpg'
-description: Mézga Family
+imgUrlLg: '../../assets/blog/mezga/mezga_lg.jpg'
+imgUrlSm: '../../assets/blog/mezga/mezga_sm.png'
+description: Romhányi József, renowned poet, transformed animation with his groundbreaking work on the Mezga Family series. In the first season, he offered a nuanced critique of family life in Kádár-era Hungary, capturing the complexities of average domestic dynamics. The second season delved into mental health and human psychology, exploring deeper emotional and psychological themes. The third season, set during a vacation, served as an allegorical critique of both socialism and capitalism, using the family’s journey to reflect on the contradictions and flaws inherent in both systems.
 layout: '../../layouts/BlogPost.astro'
 ---
 
-## Deorum petiit ignis
+# <u>The Tragedy of Man and Socialism in Kádár's Hungary</u>
 
-Lorem markdownum longo os thyrso telum, continet servat fetus nymphae, *vox
-nocte sedesque*, decimo. Omnia esse, quam sive; conplevit illis indestrictus
-admovit dedit sub quod protectus, impedit non.
+<hr class="border-1 border-t border-tcotta my-0" />
 
-## Iovis late orbem Perseus sunt
+Romhányi József, renowned poet, transformed animation with his groundbreaking work on the Mezga Family series. In the first season, he offered a nuanced critique of family life in Kádár-era Hungary, capturing the complexities of average domestic dynamics. The second season delved into mental health and human psychology, exploring deeper emotional and psychological themes. The third season, set during a vacation, served as an allegorical critique of both socialism and capitalism, using the family’s journey to reflect on the contradictions and flaws inherent in both systems.
 
-Aras reperire, sui motis correpti coniunx Onetor amore ferire lacertis, petiit.
-Bis pallor et mecum me, igne patruelibus *tendebam*, vultu sterilique terruerat
-*tempore* medium aera **eadem Mittor**.
+## The Kádár-era
 
-- Non turba loca dederunt primordia ineamus Dictys
-- Tanti amat mundus sedula
-- Potuissent aetas parili coniuge se lumina breve
-- Tamen ille crepitantibus ulla coeperunt quibus iugulo
-- Pindusque solacia luctataque felix
+## Animation
 
-## Longum minus sic saepe
+## Season 1
 
-Genu cupiens quoque: cum dolor: sollicitive cantu, et piae Leuconoe, huius non
-nil tuli Peleusque rauca. Et alvum cuncti Hippodamas meritis nec coniunx ausa,
-pete. Congestaque nisi nullus poena. Tanto cum, curvis vulnera quod optatis,
-trahens conplexa saepe.
+## Season 2
 
-Hominum quo. Signa germanaeque iuvat at feruntur precantibus corpus praebuerat
-excipit mixtaeque inferior, haec percepit regum: nec nec sit ferenti.
-
-## Geminas namque quod referitur argenteus aderat superstes
-
-Insistere pugno. Cum morae vigilantibus dulces Cycnus: neque cum sororis.
-
-Hac Aestas solet docebo tandem tamquam omnis vitiantur mitte, vatis in animique
-infelix passimque. Superasset onus.
+## Season 3

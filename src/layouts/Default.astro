@@ -15,6 +15,11 @@ interface Props {
 const { title, description, classList, pageTitle, ogImage } = Astro.props;
 ---
 
+<head>
+  <meta charset="utf-8" />
+  </head>
+  
+
 <html lang='en' class='h-full'>
   <BaseHead ogImage={ogImage} title={title} description={description} />
 

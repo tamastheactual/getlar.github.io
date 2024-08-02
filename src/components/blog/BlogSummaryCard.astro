@@ -17,8 +17,9 @@ const formattedDate = pubDate.toLocaleDateString('en-US', { year: 'numeric', mon
 
 <SummaryCard
   title={post.data.title}
+  imgSrcLg={post.data.imgUrlLg}
+  imgSrcSm={post.data.imgUrlSm}
   imgAlt={post.data.title}
-  imgSrc={post.data.imgUrl}
   description={post.data.description}
 >
   <div class='flex justify-start my-4'>
