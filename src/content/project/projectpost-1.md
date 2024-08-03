@@ -130,11 +130,7 @@ Read the full paper for more details: <u><a class="font-bold" href="/" title="Pa
 <pre style="background-color: #2e2e2e; color: #ffffff; padding: 15px; border-radius: 5px; overflow-x: hidden; font-family: monospace; white-space: pre-wrap; word-wrap: break-word;">
   <code style="color: white; letter-spacing: 1px;">
 @article{getlar2024,
-  url = {https://arxiv.org/abs/2309.15178},
-  author = {Tamás, Takács and Gergely, Magyar and László, Gulyás},  
-  title = {Scalable Reinforcement Learning in Multi-Agent Environments},
-  publisher = {arXiv},
-  year = {2024},
+  soon...
 }
   </code>
 </pre>
