@@ -8,13 +8,13 @@ const projects = await getCollection('project').then((collection) =>
 );
 ---
 
+
 <Layout
   title='projects'
   description='getlar projects | on this page you can find a collection of projects'
   pageTitle='getlar projects'
 >
-  <main class='bg-bgc p-6'>
+  <main class='bg-bgc'>
     <ProjectList projects={projects} />
-    <div class="h-[4vh] bg-bgc"/>
   </main>
 </Layout>

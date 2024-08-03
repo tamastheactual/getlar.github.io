@@ -18,6 +18,19 @@ const { blogpost } = Astro.props;
 const { Content } = await blogpost.render();
 ---
 
+<style>
+  /* Apply to the entire page */
+  body {
+      overflow-x: hidden;
+  }
+  
+  /* Apply to specific container if needed */
+  .text-justify {
+      overflow-x: hidden;
+  }
+</style>
+
+
 <div class="text-justify">
 <Content />
 </div>
