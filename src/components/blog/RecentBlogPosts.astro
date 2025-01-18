@@ -6,13 +6,19 @@ import Button from '@components/generic/Button.astro';
 
 interface Props {
   count?: number;
+  title?: string;
 }
 
-const { count } = Astro.props;
+const { count, title } = Astro.props;
 
-const posts = await getCollection('blog').then((posts) =>
-  posts.reverse().slice(0, count ?? 3)
-);
+const posts = await getCollection('blog')
+  .then((posts) =>
+    posts
+      .filter((post) => post.data.title !== title)
+      .reverse()
+      .slice(0, count ?? 3)
+  );
+const sortedPosts = posts.sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
 ---
 
 <section class='mt-4 bg-bgc'>
@@ -28,6 +34,6 @@ const posts = await getCollection('blog').then((posts) =>
         <Button href='/blog/' color='var(--bgcolor)'>to posts</Button>
       </div>
     </div>
-    <BlogList posts={posts} />
+    <BlogList posts={sortedPosts} />
   </Card>
 </section>

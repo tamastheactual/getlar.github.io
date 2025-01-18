@@ -6,13 +6,20 @@ import Button from '@components/generic/Button.astro';
 
 interface Props {
   count?: number;
+  title?: string;
 }
 
-const { count } = Astro.props;
+const { count, title} = Astro.props;
 
-const projects = await getCollection('project').then((projects) =>
-projects.reverse().slice(0, count ?? 3)
-);
+const projects = await getCollection('project')
+  .then((projects) =>
+    projects
+      .filter((projects) => projects.data.title !== title)
+      .reverse()
+      .slice(0, count ?? 3)
+  );
+
+const sortedProjects = projects.sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
 ---
 
 <section class='mt-4 bg-bgc'>
@@ -28,6 +35,6 @@ projects.reverse().slice(0, count ?? 3)
         <Button href='/project/' color='var(--bgcolor)'>to projects</Button>
       </div>
     </div>
-    <RecentProjectList projects={projects} />
+    <RecentProjectList projects={sortedProjects} />
   </Card>
 </section>

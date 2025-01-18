@@ -1,19 +1,54 @@
 ---
-interface Props {
-  content: any;
-}
+import { getGitInfo, getWordCountFromFile } from '../utils/helpers';
+import '../style/blogpost.css';
 
 const { content } = Astro.props;
+
+// Get the Git commit information for the specific file
+const { commitHash, commitDate } = getGitInfo(content.file);
+
+// Get the word count from the Markdown file
+const wordCount = getWordCountFromFile(content.file);
 ---
-<article class='prose-slate w-sm md:w-prose md:prose poppins p-6'>
-  <a href='/project/' title='Back to projects' class="hover:text-tcotta transition-all duration-150 ease-in-out text-dark poppins">&larr; Back to projects</a>
-  <p class='text-slate text-sm md:text-base'>
-    Published on: {content.pubDate} by {content.author}
+<article class="prose-slate w-sm md:w-prose md:prose poppins p-6">
+  <a href="/project/" title="Back to projects" class="hover:text-tcotta transition-all duration-150 ease-in-out text-dark poppins">&larr; Back to projects</a>
+  <hr class="border-1 border-t border-tcotta my-3" />
+
+  <p class="text-slate article-text-sm md:text-base flex items-center gap-2">
+    <i class="fas fa-user"></i> <!-- Replace this with your desired icon -->
+    {content.author}
+  
   </p>
-  <p class='text-slate text-sm md:text-base'>
-    Last Modified on: {content.lastModDate}
-  </p>
+  <p class="text-slate article-text-sm md:text-base flex items-center gap-2">
+    <i class="fas fa-clock"></i> <!-- Replace this with your desired icon -->
+    {Math.ceil(wordCount / 200)} min read
+  <!-- Word Count -->
   <slot />
-  <p class='text-slate'>Written by {content.author}</p>
-  <a href='/project/' title='Back to projects' class="hover:text-tcotta transition-all duration-150 ease-in-out text-dark poppins">&larr; Back to projects</a>
+  <p class="text-slate article-text-sm md:text-base flex items-center gap-2">
+    <i class="fas fa-file-alt"></i> <!-- Replace this with your desired icon -->
+    {wordCount} Words
+  </p>
+  
+  <!-- Published Date -->
+  <p class="text-slate article-text-sm md:text-base flex items-center gap-2">
+    <i class="fas fa-calendar-alt"></i> <!-- Replace this with your desired icon -->
+    {content.pubDate} (Last updated: {commitDate})
+  </p>
+  
+  <!-- Commit Info -->
+  <p class="text-slate article-text-sm md:text-base flex items-center gap-2">
+    <i class="fas fa-code-branch"></i>
+    <a 
+      href={`https://github.com/getlar/getlar.github.io/commit/${commitHash}`} 
+      title="View commit" 
+      target="_blank" 
+      rel="noopener noreferrer"
+    >
+      {commitHash}
+    </a> 
+    @ {commitDate}
+  </p>
+  <hr class="border-1 border-t border-tcotta my-3" />
+  <a href="/project/" title="Back to projects" class="hover:text-tcotta transition-all duration-150 ease-in-out text-dark poppins">&larr; Back to projects</a>
+  
 </article>

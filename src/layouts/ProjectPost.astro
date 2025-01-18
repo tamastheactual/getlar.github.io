@@ -11,7 +11,10 @@ const { title, description } = content;
 ---
 <head>
   <meta charset="utf-8" />
-  
+  <link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  rel="stylesheet"
+  />
   </head>
 
 <style>
@@ -35,7 +38,7 @@ hr {
     </ProjectContent>
   </main>
   <section class='p-6 bg-bgc'>
-    <RecentProjectPosts count={3} />
+    <RecentProjectPosts count={3} title={title} />
   </section>
   <div class="h-[10vh] bg-bgc"/>
 </Layout>

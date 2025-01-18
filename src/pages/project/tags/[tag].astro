@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Layout from '@layouts/Default.astro';
 import ProjectList from '@components/project/ProjectList.astro';
+import Pill from '@components/generic/Pill.astro';
 import type { CollectionEntry } from 'astro:content';
 import Button from '@components/generic/Button.astro';
 
@@ -46,7 +47,9 @@ const { tag, projects } = Astro.props;
 >
   <main class='bg-bgc p-6'>
     <div class="ml-4">
-        <Button color='var(--navbg)' href='/project/'>&larr; Back to projects</Button>
+      <Button color='var(--navbg)' href='/project/'>&larr; Back to projects</Button>
+    </div>
+      <div class="ml-4 pt-3"><p class='poppins mt-2 color-textcolor font-semibold'>Filtered by Tag: <Pill color='var(--navbg)'>{tag}</Pill></p>
     </div>
     <ProjectList projects={projects} />
     <div class="h-[4vh] bg-bgc"/>

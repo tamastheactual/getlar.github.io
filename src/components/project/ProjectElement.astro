@@ -33,7 +33,9 @@ const title = project.data.title;
     <div class="details flex items-center justify-between">
         <!-- Year Section -->
         <div class="year text-1xl md:text-2xl lg:text-4xl font-mono text-gray-800 pr-6">
+          <a href={`/project/years/${year}/`} class="hover:text-tcotta hover:underline transition-all duration-500 ease-in-out">
             {year}
+          </a>
         </div>
 
         <!-- Centered Pills Section -->

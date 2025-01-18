@@ -17,16 +17,17 @@ const socials = [
 ---
 
 <section class='md:hidden'>
-  <h2 class='hidden'>Socials section</h2>
-  <ul class='flex justify-between'>
-    {
-      socials.map((item) => (
-        <li class='bg-navbg px-4 py-2 text-tcotta border-black border-2 rounded card-shadow'>
-          <a href={item.url} target='_blank' title={`Go to ${item.name}`}>
-            <div class:list={[item.icon, 'p-6']} />
-          </a>
-        </li>
-      ))
-    }
-  </ul>
+  <div class="p-8">
+    <ul class='flex justify-between'>
+      {
+        socials.map((item) => (
+          <li class='bg-navbg px-4 py-2 text-tcotta border-black border-2 rounded card-shadow'>
+            <a href={item.url} target='_blank' title={`Go to ${item.name}`}>
+              <div class={`${item.icon} p-6`} />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </section>
