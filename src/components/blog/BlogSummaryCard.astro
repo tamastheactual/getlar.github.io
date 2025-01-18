@@ -35,8 +35,8 @@ const formattedYear = pubDate.getFullYear().toString();
       </a>
     </div>
     <p class='poppins mt-2 color-textcolor font-semibold'>Additional tags:</p>
-    <div class='flex justify-between items-center'>
-      <ul class='flex gap-4 mt-2'>
+    <div class='flex flex-wrap gap-4 mt-2'> <!-- Add flex-wrap here -->
+      <ul class='flex flex-wrap gap-4'> <!-- Add flex-wrap to the ul -->
         {
           post.data.tags.map((tag) => {
             return (
@@ -59,3 +59,4 @@ const formattedYear = pubDate.getFullYear().toString();
     </div>
   </div>
 </SummaryCard>
+
