@@ -9,7 +9,19 @@ interface Props {
 }
 
 const { projects } = Astro.props;
-const sortedProjects = projects.sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
+
+const groupedProjects = projects.reduce((acc, project) => {
+  const year = new Date(project.data.pubDate).getFullYear();
+  if (!acc[year]) {
+    acc[year] = [];
+  }
+  acc[year].push(project);
+  return acc;
+}, {} as Record<number, CollectionEntry<'project'>[]>);
+
+const sortedYears = Object.keys(groupedProjects).sort((a, b) => Number(b) - Number(a));
+
+console.log(sortedYears);
 ---
 
 <main class='bg-bgc'>
@@ -20,17 +32,28 @@ const sortedProjects = projects.sort((a, b) => new Date(b.data.pubDate).getTime(
             </TitleCard>
             
             <div class='w-full mt-12'>
-                <ul class='p-0 space-y-8'>
+                <ul class="p-0 space-y-8">
                     {
-                        sortedProjects.map((project) => {
-                            return (
+                      sortedYears.map((year) => (
+                        <li>
+                          <div class="text-1xl md:text-2xl lg:text-4xl font-mono text-gray-800 pr-6 mb-4">
+                            <a href={`/project/years/${year}/`} class="hover:text-tcotta underline transition-all duration-500 ease-in-out">
+                              {year}
+                            </a>
+                          </div>
+                          <ul class="space-y-6">
+                            {
+                              groupedProjects[Number(year)].map((project) => (
                                 <li>
-                                    <ProjectElement project={project} color="tcotta"/>
+                                  <ProjectElement project={project} color="tcotta" hideYear={true} />
                                 </li>
-                            );
-                        })
+                              ))
+                            }
+                          </ul>
+                        </li>
+                      ))
                     }
-                </ul>
+                  </ul>
             </div>
         </div>
     </section>

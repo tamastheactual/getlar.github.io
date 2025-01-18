@@ -4,7 +4,7 @@ pubDate: 07/29/2024 20:00
 lastModDate: 08/02/2024 16:00
 author: "Tamás Takács"
 tags:
-  - reinforcement learning
+  - rl
   - marl
   - paper
 imgUrlLg: '../../assets/project/marl/RL.png'

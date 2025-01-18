@@ -1,6 +1,6 @@
 ---
 title: Deep Network Development
-pubDate: 07/29/2024 20:00
+pubDate: 07/29/2023 20:00
 lastModDate: 08/02/2024 16:00
 author: "Tamás Takács"
 tags:
