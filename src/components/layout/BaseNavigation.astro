@@ -56,7 +56,10 @@ const { pageTitle } = Astro.props;
 <header class='border-b-2 border-textcolor flex justify-between p-4 items-center bg-navbg h-16'>
   {pageTitle && <h1 class='hidden'>{pageTitle}</h1>}
   <a href='/' title='Back to Home' class='flex items-center'>
-    <p class='outfit text-xl md:text-2xl lg:text-4xl text-textcolor'> &gt;/tamastheactual/</p>
+    <p class="outfit text-xl md:text-2xl lg:text-4xl text-textcolor">
+      <span class="lg:hidden">&gt;/tta/</span>
+      <span class="hidden lg:inline">&gt;/tamastheactual/</span>
+    </p>
     <svg id="flashing-slash" width="30" height="30" viewBox="0 0 2 30" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect width="20" height="30" fill="var(--tcotta)"/>
     </svg>
