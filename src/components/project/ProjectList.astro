@@ -1,5 +1,4 @@
 ---
-// Import necessary types and components
 import type { CollectionEntry } from 'astro:content';
 import ProjectElement from './ProjectElement.astro';
 import TitleCard from '@components/generic/TitleCard.astro';
@@ -11,6 +10,7 @@ interface Props {
 
 const { projects, filterHeight = false } = Astro.props;
 
+// Group projects by year
 const groupedProjects = projects.reduce((acc, project) => {
   const year = new Date(project.data.pubDate).getFullYear();
   if (!acc[year]) {
@@ -20,6 +20,7 @@ const groupedProjects = projects.reduce((acc, project) => {
   return acc;
 }, {} as Record<number, CollectionEntry<'project'>[]>);
 
+// Sort the years in descending order
 const sortedYears = Object.keys(groupedProjects).sort((a, b) => Number(b) - Number(a));
 ---
 
@@ -46,15 +47,17 @@ const sortedYears = Object.keys(groupedProjects).sort((a, b) => Number(b) - Numb
                 </a>
               </div>
               <ul class="space-y-6">
-                {groupedProjects[Number(year)].map((project) => (
-                  <li>
-                    <ProjectElement
-                      project={project}
-                      color="tcotta"
-                      hideYear={true}
-                    />
-                  </li>
-                ))}
+                {groupedProjects[Number(year)]
+                  .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
+                  .map((project) => (
+                    <li>
+                      <ProjectElement
+                        project={project}
+                        color="tcotta"
+                        hideYear={true}
+                      />
+                    </li>
+                  ))}
               </ul>
             </li>
           ))}
@@ -63,7 +66,3 @@ const sortedYears = Object.keys(groupedProjects).sort((a, b) => Number(b) - Numb
     </div>
   </section>
 </main>
-
-
-
-
