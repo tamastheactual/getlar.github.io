@@ -4,8 +4,8 @@ import { getCollection } from 'astro:content';
 export async function GET(context) {
   const blog = await getCollection('blog');
   return rss({
-    title: 'Getlar Home Page',
-    description: 'Getlar Home Page',
+    title: 'tamastheactual Home Page',
+    description: 'tamastheactual Home Page',
     stylesheet: false,
     site: context.site,
     items: blog.map((post) => ({
@@ -15,6 +15,6 @@ export async function GET(context) {
       link: `/blog/${post.slug}/`,
     })),
     customData: '<language>en-us</language>',
-    canonicalUrl: 'https://getlar.github.io/',
+    canonicalUrl: 'https://tamastheactual.github.io/',
   });
 }

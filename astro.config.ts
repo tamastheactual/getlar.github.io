@@ -6,7 +6,7 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   // used to generate images
-  site: process.env.VERCEL_ENV === 'production' ? 'https://getlar.github.io/' : process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}/` : 'https://getlar.github.io',
+  site: process.env.VERCEL_ENV === 'production' ? 'https://tamastheactual.github.io/' : process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}/` : 'https://tamastheactual.github.io',
   trailingSlash: 'ignore',
   integrations: [sitemap(), UnoCSS({
     injectReset: true
