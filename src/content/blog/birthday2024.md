@@ -71,22 +71,43 @@ Interestingly, I thought I wouldn’t enjoy being the Quiz Master or taking on a
 
 ### Topics Included:
 
-- Alcohol-related questions  
-- Gaming-related questions  
-- Math questions  
-- Art questions  
-- Coffee-related questions  
-- Movies and series-related questions  
-- Questions related to *Magyar Népmesék*  
+- Alcohol-related questions: <u><a class="font-bold" style="color:var(--tcotta)" href="Pince.pdf" title="Paper Link" target="_blank">[The Pince]</a></u>
+- Gaming-related questions: <u><a class="font-bold" style="color:var(--tcotta)" href="Számítógép.pdf" title="Paper Link" target="_blank">[The Számítógép]</a></u>
+- Math questions: <u><a class="font-bold" style="color:var(--tcotta)" href="Szerszámos.pdf" title="Paper Link" target="_blank">[The Szerszámos]</a></u>
+- Art questions: <u><a class="font-bold" style="color:var(--tcotta)" href="Hinta.pdf" title="Paper Link" target="_blank">[The Hinta]</a></u>
+- Coffee-related questions: <u><a class="font-bold" style="color:var(--tcotta)" href="Terasz.pdf" title="Paper Link" target="_blank">[The Terasz]</a></u>
+- Movies and series-related questions: <u><a class="font-bold" style="color:var(--tcotta)" href="Televízió.pdf" title="Paper Link" target="_blank">[The Televízió]</a></u>
+- Questions related to *Magyar Népmesék*: <u><a class="font-bold" style="color:var(--tcotta)" href="Padlás.pdf" title="Paper Link" target="_blank">[The Padlás]</a></u>
+- Food related questions: <u><a class="font-bold" style="color:var(--tcotta)" href="Konyha.pdf" title="Paper Link" target="_blank">[The Konyha]</a></u>
 
 We naturally had a winning team. However, since I had obviously bluffed about a prize, I had to come up with a nonsense story to deflect attention. The rest is history.  
+
+![Results](../../assets/project/dnd24251/quiz.jpg)
+
+*The Quizzes in question. Photo: <span class="font-extrabold">Me 😊</span>*
 
 ## <u>The End</u>
 
 The following day, we had an amazing hiking trip in Glăvoi.
 
-- We climbed...  
-- We geocached...  
-- And we ate at the best little buffet around, called *Costi*, where most of us enjoyed mushroom cream soup made from freshly foraged mushrooms and house-made lángos.  
+We climbed...  
+
+![Results](../../assets/project/dnd24251/monkey.JPG)
+
+*The Quizzes in question. Photo: <span class="font-extrabold">Me 😊</span>*
+
+We geocached...
+
+![Results](../../assets/project/dnd24251/geocache.jpg)
+
+*The Quizzes in question. Photo: <span class="font-extrabold">Me 😊</span>*
+
+And we ate at the best little buffet around, called *Costi*, where most of us enjoyed mushroom cream soup made from freshly foraged mushrooms and house-made lángos.
+
+![Results](../../assets/project/dnd24251/us.jpg)
+
+*The Quizzes in question. Photo: <span class="font-extrabold">Me 😊</span>*
 
 Thanks, everyone! Love you all!
+
+<hr class="border-1 border-t border-tcotta my-0" />

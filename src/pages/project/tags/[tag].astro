@@ -51,7 +51,6 @@ const { tag, projects } = Astro.props;
     </div>
       <div class="ml-4 pt-3"><p class='poppins mt-2 color-textcolor font-semibold'>Filtered by Tag: <Pill color='var(--navbg)'>{tag}</Pill></p>
     </div>
-    <ProjectList projects={projects} />
-    <div class="h-[4vh] bg-bgc"/>
+    <ProjectList projects={projects} filterHeight={true} />
   </main>
 </Layout>
