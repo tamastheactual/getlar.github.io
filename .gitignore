@@ -1,3 +1,54 @@
-.astro
-node_modules
-dist
+# Logs
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime files
+.pnp.cjs
+.pnp.loader.mjs
+
+# Astro build output
+/dist
+/.astro
+
+# Dependency directories
+node_modules/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Editor-specific files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Cache files
+.cache/
+output/
+*.tmp
+*.swp
+
+# Generated lock files (optional, depending on your preferences)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Static site host-specific files
+.netlify/
+.netlify/functions/
+.vercel/
+
+# Temporary deployment files
+astro.config.*.local
+
+# Test and coverage directories (if applicable)
+coverage/
+jest.config.js
+*.test.js
+*.test.ts
