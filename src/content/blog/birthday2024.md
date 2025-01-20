@@ -94,19 +94,19 @@ We climbed...
 
 ![Results](../../assets/project/dnd24251/monkey.JPG)
 
-*The Quizzes in question. Photo: <span class="font-extrabold">Me 😊</span>*
+*Monke. Photo: <span class="font-extrabold">Me 😊</span>*
 
 We geocached...
 
 ![Results](../../assets/project/dnd24251/geocache.jpg)
 
-*The Quizzes in question. Photo: <span class="font-extrabold">Me 😊</span>*
+*Goldmine. Photo: <span class="font-extrabold">Me 😊</span>*
 
 And we ate at the best little buffet around, called *Costi*, where most of us enjoyed mushroom cream soup made from freshly foraged mushrooms and house-made lángos.
 
 ![Results](../../assets/project/dnd24251/us.jpg)
 
-*The Quizzes in question. Photo: <span class="font-extrabold">Me 😊</span>*
+*Cold profiles. Photo: <span class="font-extrabold">Me 😊</span>*
 
 Thanks, everyone! Love you all!
 
