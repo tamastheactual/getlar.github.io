@@ -24,7 +24,7 @@ I also like bouldering. A lot.
 
 ![Climbing](../../assets/about/climbing.jpg)
 
-*Gravity Boulder. Photo: <span class="font-extrabold">Me 😊</span>*
+*Gravity Boulder. Photo: <span class="font-extrabold">Imre Molnár</span>*
 
 Aaaand I also have a cat...
 
