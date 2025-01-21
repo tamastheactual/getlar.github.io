@@ -17,17 +17,29 @@ const title = project.data.title;
 ---
 
 <style>
-  /* Default styles: Pills are shown */
-  .pills-container {
-    display: flex;
+.details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pills-container {
+  display: flex;
+  gap: 6px;
+  margin-top: 0;
+}
+@media (max-width: 1024px) {
+  .details {
+    flex-wrap: wrap;
   }
 
-  /* Hide Pills on screens narrower than 768px */
-  @media (max-width: 1024px) {
-    .pills-container {
-      display: none;
-    }
+  .pills-container {
+    width: 100%;
+    margin-top: 6px;
+    margin-bottom: -10px;
+    justify-content: flex-start;
   }
+}
 </style>
 
 <div class="project space-y-2">
