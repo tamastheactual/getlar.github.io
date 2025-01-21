@@ -49,7 +49,8 @@ const { tag, blogposts } = Astro.props;
     <div class="ml-4">
       <Button color='var(--navbg)' href='/blog/'>&larr; Back to posts</Button>
     </div>
-      <div class="ml-4 pt-3"><p class='poppins mt-2 color-textcolor font-semibold'>Filtered by Tag: <Pill color='var(--navbg)'>{tag}</Pill></p>
+    <div class="ml-4 pt-3 pb-6">
+        <p class='poppins mt-2 color-textcolor font-semibold'>Filtered by Tag: <Pill color='var(--navbg)'>{tag}</Pill></p>
     </div>
     <BlogList posts={blogposts} />
     <div class=" bg-greyer"/>
