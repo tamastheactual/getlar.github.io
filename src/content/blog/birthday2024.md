@@ -19,7 +19,7 @@ There are periods in my life when I feel the need to **unleash my creative side*
 
 ## <u>The Problem</u>
 
-I didn’t have such a problem before my birthday... so I created one. A quiz. <span class="font-extrabold" style="color:var(--tcotta)">Yes!</span> What better way to kick off a birthday party after four hours of travel than with a mind-numbing quiz featuring a fake prize that doesn’t even exist? So I did it—and, as usual, **I mostly overdid it**.
+I didn’t have such a problem before my birthday... so I created one. A quiz. <span class="font-extrabold text-tcotta dark:text-dark-tcotta">Yes!</span> What better way to kick off a birthday party after four hours of travel than with a mind-numbing quiz featuring a fake prize that doesn’t even exist? So I did it—and, as usual, **I mostly overdid it**.
 
 Initially, I planned to keep things simple: a few sheets of thematic questions to share with my friends. I thought about splitting them into groups to make scoring easier and add some teamwork. The idea was to hold the quiz on our backyard porch, in a small eating area, keeping it stationary and relaxed.
 
@@ -27,7 +27,7 @@ Initially, I planned to keep things simple: a few sheets of thematic questions t
 
 Then I thought… what if I turned it into a more dynamic activity, making the teams run around the backyard, the cellar, the house, and other key areas? But just making them walk and run around felt a bit anti-social since they’d hardly interact with one another.
 
-Then it hit me — <span class="font-extrabold" style="color:var(--tcotta)">alcohol</span> can turn a bad idea into a slightly better one by adding a hint of tipsiness to the competitors. At each key station, teams would be **penalized** for not answering enough questions correctly, with the penalty being an **equal number of shots**. And then I had a brilliant idea: to **reward** good teams with the ability to give drinks to other teams based on their performance. This added an entirely new twist to the game, introducing strategic opportunities to make other teams tipsier and, as a result, worse at the following quizzes.
+Then it hit me — <span class="font-extrabold text-tcotta dark:text-dark-tcotta">alcohol</span> can turn a bad idea into a slightly better one by adding a hint of tipsiness to the competitors. At each key station, teams would be **penalized** for not answering enough questions correctly, with the penalty being an **equal number of shots**. And then I had a brilliant idea: to **reward** good teams with the ability to give drinks to other teams based on their performance. This added an entirely new twist to the game, introducing strategic opportunities to make other teams tipsier and, as a result, worse at the following quizzes.
 
 The question sheets usually followed this format:
 
@@ -47,7 +47,7 @@ To make it more fun for myself, I added a twist for the "5 correct" option, stat
 
 ## <u>Who wins?</u>
 
-<span class="font-extrabold" style="color:var(--tcotta)">Let’s flip the whole concept on its head and make the winners not the team with the most correct answers, but the team that drank the least amount of shots.</span> This added a whole new layer of strategy and tactics. Teams only knew who they assigned drinks to and which team gave them a certain number of drinks. With this partial observation of interactions between other teams, they had to rely on estimation and deduction.
+<span class="font-extrabold text-tcotta dark:text-dark-tcotta">Let’s flip the whole concept on its head and make the winners not the team with the most correct answers, but the team that drank the least amount of shots.</span> This added a whole new layer of strategy and tactics. Teams only knew who they assigned drinks to and which team gave them a certain number of drinks. With this partial observation of interactions between other teams, they had to rely on estimation and deduction.
 
 ## <u>Envelope of Death</u>
 
@@ -110,4 +110,4 @@ And we ate at the best little buffet around, called *Costi*, where most of us en
 
 Thanks, everyone! Love you all!
 
-<hr class="border-1 border-t border-tcotta my-0" />
+<hr class="border-1 border-t border-tcotta dark:border-dark-tcotta my-0" />

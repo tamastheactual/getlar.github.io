@@ -51,26 +51,44 @@ const { pageTitle } = Astro.props;
   .a:hover {
     color: var(--flashing);
   }
+
+  .theme-icon {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.theme-icon.fade-out {
+  opacity: 0;
+  transform: scale(0.8);
+  pointer-events: none; /* Disable interaction while fading out */
+}
+
+.theme-icon.fade-in {
+  opacity: 1;
+  transform: scale(1);
+}
 </style>
 
-<header class='border-b-2 border-textcolor flex justify-between p-4 items-center bg-navbg h-16'>
+
+<header class="border-b-2 border-textcolor dark:border-dark-textcolor flex justify-between p-4 pb-3 items-center bg-navbg dark:bg-dark-navbg h-16">
   {pageTitle && <h1 class='hidden'>{pageTitle}</h1>}
-  <a href='/' title='Back to Home' class='flex items-center'>
-    <p class="outfit text-xl md:text-2xl lg:text-4xl text-textcolor">
+  <a href="/" title="Back to Home" class="flex items-center">
+    <p class="outfit text-2xl md:text-2xl lg:text-2xl text-textcolor dark:text-dark-textcolor pb-1">
       <span class="lg:hidden">&gt;/tta/</span>
       <span class="hidden lg:inline">&gt;/tamastheactual/</span>
     </p>
     <svg id="flashing-slash" width="30" height="30" viewBox="0 0 2 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="20" height="30" fill="var(--tcotta)"/>
+      <rect width="20" height="30" class="fill-[var(--tcotta)] dark:fill-[var(--tcotta-dark)]" />
     </svg>
   </a>
-  <nav class='hidden md:inline-block'>
-    <h2 class='hidden'>Navigation</h2>
-    <ul class='flex gap-8 poppins'>
+  <nav class="hidden md:inline-block">
+    <ul class="flex lg:gap-8 md:gap-6 poppins">
+      
       {navigationItems.map((item) => (
-        <li>
+        <li class="md:pt-0.5 lg:pt-0">
           <a
-            class='text-lg font-medium hover:text-tcotta hover:underline transition-all duration-500 ease-in-out text-textcolor'
+            class="text-md md:text-md lg:text-lg font-medium hover:text-tcotta hover:underline transition-all duration-500 ease-in-out text-textcolor dark:text-dark-textcolor dark:hover:text-dark-tcotta"
             href={item.url}
             title={`Go to ${item.name}`}
             target={item.name === 'cv' ? '_blank' : '_self'}
@@ -82,31 +100,44 @@ const { pageTitle } = Astro.props;
       ))}
       <li>
         <svg id="pipe" width="10" height="30" viewBox="0 0 2 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="2" height="30" fill="#333333"/>
+          <rect width="2" height="30" class="fill-textcolor dark:fill-dark-textcolor" />
         </svg>
+      </li>
+      <li>
+        <button
+          id="theme-toggle-desktop"
+          class="text-textcolor dark:text-dark-textcolor hover:text-tcotta dark:hover:text-dark-tcotta focus:outline-none transition-all flex items-center justify-center"
+          title="Toggle Dark/Light Mode"
+        >
+          <div
+            id="theme-icon-desktop"
+            class="flex items-center justify-center"
+            style="width: 1.75rem; height: 1.75rem;"
+          ></div>
+        </button>
       </li>
       {socialIcons.map((item) => (
         <li>
           <a
             href={item.url}
-            class='hover:text-tcotta hover:underline transition-all duration-500 ease-in-out text-textcolor'
-            target='_blank'
+            class="hover:text-tcotta dark:hover:text-dark-tcotta hover:underline transition-all duration-500 ease-in-out text-textcolor dark:text-dark-textcolor"
+            target="_blank"
             title={`See @tamastheactual on ${item.name}`}
           >
-            <div class:list={[item.icon, 'w-6 h-6']} />
+            <div class:list={[item.icon, 'w-7 h-7']} />
           </a>
         </li>
       ))}
     </ul>
   </nav>
-  <nav class='md:hidden flex inline-block'>
-    <h2 class='hidden'>Mobile Navigation</h2>
+  <nav class="md:hidden flex inline-block">
+    <h2 class="hidden">Mobile Navigation</h2>
     <ul class="flex gap-3 poppins">
       {navigationItems.map((item) => (
         item.name !== 'home' && (
-          <li>
+          <li class="pt-0.5">
             <a
-              class='text-lg font-medium hover:text-tcotta hover:underline transition-all duration-500 ease-in-out text-textcolor'
+              class="text-md font-medium hover:text-tcotta dark:hover:text-dark-tcotta hover:underline transition-all duration-500 ease-in-out text-textcolor dark:text-dark-textcolor"
               href={item.url}
               title={`Go to ${item.name}`}
               target={item.name === 'cv' ? '_blank' : '_self'}
@@ -117,7 +148,95 @@ const { pageTitle } = Astro.props;
           </li>
         )
       ))}
+      <li>
+        <button
+          id="theme-toggle-mobile"
+          class="text-textcolor dark:text-dark-textcolor hover:text-tcotta dark:hover:text-dark-tcotta focus:outline-none transition-all flex items-center justify-center"
+          title="Toggle Dark/Light Mode"
+        >
+          <div
+            id="theme-icon-mobile"
+            class="flex items-center justify-center"
+            style="width: 1.75rem; height: 1.75rem;"
+          ></div>
+        </button>
+      </li>
     </ul>
   </nav>
 </header>
 
+
+
+<script>
+  function applyTheme() {
+    const storedTheme = localStorage.getItem("theme") || "light";
+
+    if (storedTheme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }
+
+  function updateIcons() {
+    const desktopIcon = document.getElementById("theme-icon-desktop");
+    const mobileIcon = document.getElementById("theme-icon-mobile");
+
+    if (desktopIcon && mobileIcon) {
+      const storedTheme = localStorage.getItem("theme") || "light";
+      const newIconClass = storedTheme === "dark" ? "i-uil-sun" : "i-uil-moon";
+
+      desktopIcon.classList.add("fade-out");
+      mobileIcon.classList.add("fade-out");
+
+      setTimeout(() => {
+        desktopIcon.className = `theme-icon ${newIconClass} fade-in`;
+        mobileIcon.className = `theme-icon ${newIconClass} fade-in`;
+
+        setTimeout(() => {
+          desktopIcon.classList.remove("fade-in");
+          mobileIcon.classList.remove("fade-in");
+        }, 300);
+      }, 300);
+    }
+  }
+
+  function toggleTheme() {
+    const storedTheme = localStorage.getItem("theme") || "light";
+    const newTheme = storedTheme === "dark" ? "light" : "dark";
+
+    if (newTheme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+
+    localStorage.setItem("theme", newTheme);
+    updateIcons();
+  }
+
+  function attachThemeToggleListeners() {
+    const desktopToggle = document.getElementById("theme-toggle-desktop");
+    const mobileToggle = document.getElementById("theme-toggle-mobile");
+
+    if (desktopToggle) {
+      desktopToggle.removeEventListener("click", toggleTheme);
+      desktopToggle.addEventListener("click", toggleTheme);
+    }
+
+    if (mobileToggle) {
+      mobileToggle.removeEventListener("click", toggleTheme);
+      mobileToggle.addEventListener("click", toggleTheme);
+    }
+  }
+
+  applyTheme();
+  updateIcons();
+  attachThemeToggleListeners();
+
+  document.addEventListener("astro:after-swap", () => {
+    applyTheme();
+    updateIcons();
+    attachThemeToggleListeners();
+  });
+</script>

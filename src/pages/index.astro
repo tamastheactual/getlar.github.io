@@ -19,22 +19,50 @@ import Leaf from '../assets/leaf.svg?raw';
   pageTitle='tamastheactual - home page'
   description='home page'
 >
-  <main class='bg-bgc flex-1 overflow-auto'>
+  <main class="bg-bgcolor dark:bg-dark-bgcolor flex-1 overflow-auto">
     <MobileSocials />
-    <section id='about' class='flex items-center justify-center h-[calc(100vh-6rem)]'>
-      <div class='max-w-8xl'>
-        <TitleCard color='var(--navbg)'>
+    <section id="about" class="flex items-center justify-center h-[calc(100vh-6rem)]">
+      <div class="max-w-8xl">
+        <TitleCard color="var(--navbg)">
           <div class="flex flex-col justify-center items-center h-full p-4">
-            <p class="mt-4 outfit text-2xl md:text-5xl lg:text-7xl text-center"> Takács Tamás</p>
+            <p class="mt-4 outfit text-2xl md:text-5xl lg:text-7xl text-center text-textcolor dark:text-dark-textcolor">
+              Takács Tamás
+            </p>
             <div class="mt-4">
-            <Fragment set:html={Leaf}></Fragment>
-            </div> 
-            <a class="mt-4 outfit text-xl md:text-3xl lg:text-5xl text-center" href="https://www.inf.elte.hu/" target="_blank"> PhD Student @ Eötvös Loránd University </a>
+              <Fragment set:html={Leaf}></Fragment>
+            </div>
+            <a
+              class="mt-4 outfit text-xl md:text-3xl lg:text-5xl text-center text-textcolor dark:text-dark-textcolor"
+              href="https://www.inf.elte.hu/"
+              target="_blank"
+            >
+              PhD Student @ Eötvös Loránd University
+            </a>
             <div class="mt-4"></div>
-            <a class="mt-4 outfit text-sm md:text-ml lg:text-2xl text-center" href="mailto:tamastheactual&commat;inf&period;elte&period;hu">tamastheactual(at)inf(dot)elte(dot)hu </a>
-          </div>   
+            <a
+              class="mt-4 outfit text-sm md:text-ml lg:text-2xl text-center text-textcolor dark:text-dark-textcolor"
+              href="mailto:tamastheactual&commat;inf&period;elte&period;hu"
+            >
+              tamastheactual(at)inf(dot)elte(dot)hu
+            </a>
+          </div>
         </TitleCard>
+        <div
+          class="bg-bgcolor dark:bg-dark-bgcolor text-textcolor dark:text-dark-textcolor poppins flex justify-center"
+          style="font-size: 12px; max-width: 100%; padding: 0 1rem; text-align: center;"
+        >
+          Licensed under&nbsp;
+          <a
+            href="https://creativecommons.org/licenses/by-nc-nd/4.0/"
+            target="_blank"
+            class="text-tcotta dark:text-dark-tcotta"
+          >
+            CC BY-NC-ND 4.0
+          </a>
+          . © Tamás Takács, 2025.
+        </div>
       </div>
-    </section>    
+    </section>
   </main>
 </Layout>
+

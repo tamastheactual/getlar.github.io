@@ -16,12 +16,12 @@ const socials = [
 ];
 ---
 
-<section class='md:hidden'>
+<section class='md:hidden h-[2vh]'>
   <div class="p-8">
     <ul class='flex justify-between'>
       {
         socials.map((item) => (
-          <li class='bg-navbg px-4 py-2 text-tcotta border-black border-2 rounded card-shadow'>
+        <li class="bg-navbg dark:bg-dark-navbg px-4 py-2 text-tcotta dark:text-dark-tcotta border-black dark:border-white border-2 rounded shadow-card-shadow">
             <a href={item.url} target='_blank' title={`Go to ${item.name}`}>
               <div class={`${item.icon} p-6`} />
             </a>

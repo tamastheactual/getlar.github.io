@@ -1,33 +1,51 @@
 ---
 interface Props extends HTMLAttributes<'a'> {
-  color?: string | undefined;
+  color?: string;
+  darkColor?: string;
 }
 
 import type { HTMLAttributes } from 'astro/types';
 
-const { color, ...rest } = Astro.props;
+const { color, darkColor, ...rest } = Astro.props;
 ---
 
-<style define:vars={{ color: color }}>
+<style define:vars={{ color: color || '#f2f2f2', darkColor: darkColor || '#383938' }}>
   a.brutal-btn {
     filter: drop-shadow(3px 3px 0 rgb(0 0 0 / 1));
     background-color: var(--color);
     display: inline-block;
     padding: 0.5rem 1rem;
     border: 2px solid var(--textcolor);
-    transition: all;
+    transition: all 0.5s ease-in-out;
     color: var(--textcolor);
-    transition-duration: 0.5s;
-    animation: ease-in-out;
     font-family: 'Sanchez', serif;
   }
+
   a.brutal-btn:hover {
     filter: drop-shadow(0px 0px 0 rgb(0 0 0 / 1));
     background-color: var(--tcotta);
     color: white;
   }
+
+  /* Dark mode styles */
+  :root.dark a.brutal-btn {
+    filter: drop-shadow(3px 3px 0 rgb(255 255 255 / 1));
+    background-color: var(--darkColor);
+    color: var(--textcolor-dark);
+    border: 2px solid var(--textcolor-dark);
+  }
+
+  :root.dark a.brutal-btn:hover {
+    filter: drop-shadow(0px 0px 0 rgb(255 255 255 / 1));
+    background-color: var(--tcotta-dark);
+    color: white;
+  }
 </style>
 
-<a {...rest} class='brutal-btn'>
+<a
+  {...rest}
+  class="brutal-btn"
+  style={`--color: ${color}; --dark-color: ${darkColor};`}
+>
   <slot />
 </a>

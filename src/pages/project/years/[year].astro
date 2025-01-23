@@ -42,12 +42,18 @@ const { year, projects } = Astro.props;
   description={`tamastheactual projects | all projects tagged with ${year}`}
   pageTitle={`tamastheactual projects | projects tagged with ${year}`}
 >
-<main class='bg-bgc p-6'>
-  <div class="ml-4">
-    <Button color='var(--navbg)' href='/project/'>&larr; Back to projects</Button>
-  </div>
-    <div class="ml-4 pt-3"><p class='poppins mt-2 color-textcolor font-semibold'>Filtered by Year: <Pill color='var(--navbg)'>{year}</Pill></p>
-  </div>
-  <ProjectList projects={projects} filterHeight={true} />
-</main>
+  <main class='bg-bgcolor dark:bg-dark-bgcolor p-6'>
+    <div class="ml-4">
+      <Button href="/project/" color="var(--bgcolor)" darkColor="var(--bgcolor-dark)">
+        Go to projects &rarr;
+      </Button>
+    </div>
+      <div class="ml-4 pt-3">
+        <p class="poppins mt-2 text-textcolor dark:text-dark-textcolor font-semibold">Filtered by Year: 
+          <Pill color='var(--navbg)' darkColor='var(--navbg-dark)'>{year}
+          </Pill>
+        </p>
+    </div>
+    <ProjectList projects={projects} filterHeight={true} />
+  </main>
 </Layout>

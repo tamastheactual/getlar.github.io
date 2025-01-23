@@ -22,10 +22,28 @@
   --primary: var(--sys-color-white);
   --secondary: var(--sys-color-black);
 
-  --tcotta: #89430a;
-  --navbg: #f4eee0;
-  --bgcolor: #edebe6;
-  --textcolor: #333333;
+  --tcotta: #023209;
+  --navbg: #f2f2f2;
+  --bgcolor: #fcfcfc;
+  --textcolor: #222222;
+  --greyer: #d6d6d6;
+
+  --tcotta-dark: #4d8d57;
+  --navbg-dark: #383938;
+  --bgcolor-dark: #3e3f3e;
+  --textcolor-dark: #f0f0f0;
+  --greyer-dark: #3a3a3a;
+
+  --card-shadow-color: black;
+}
+
+:root.dark {
+  --card-shadow-color: white;
+}
+
+body {
+  background-color: var(--bgcolor);
+  color: var(--textcolor);
 }
 
 html {

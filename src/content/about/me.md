@@ -32,4 +32,4 @@ Aaaand I also have a cat...
 
 *Taro. Photo: <span class="font-extrabold">Me 😊</span>*
 
-<hr class="border-1 border-t border-tcotta my-0" />
+<hr class="border-1 border-t border-tcotta dark:border-dark-tcotta my-0" />

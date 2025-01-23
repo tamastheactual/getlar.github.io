@@ -45,14 +45,14 @@ const { tag, blogposts } = Astro.props;
   description={`tamastheactual posts | all posts tagged with ${tag}`}
   pageTitle={`tamastheactual posts | posts tagged with ${tag}`}
 >
-  <main class='bg-greyer p-6 min-h-screen'>
+  <main class='bg-greyer dark:bg-dark-greyer p-6 min-h-screen'>
     <div class="ml-4">
-      <Button color='var(--navbg)' href='/blog/'>&larr; Back to posts</Button>
+      <Button color='var(--navbg)' darkColor='var(--navbg-dark)' href='/blog/'>&larr; Back to posts</Button>
     </div>
     <div class="ml-4 pt-3 pb-6">
-        <p class='poppins mt-2 color-textcolor font-semibold'>Filtered by Tag: <Pill color='var(--navbg)'>{tag}</Pill></p>
+        <p class='poppins mt-2 text-textcolor dark:text-dark-textcolor font-semibold"'>Filtered by Tag: <Pill color='var(--navbg)' darkColor='var(--navbg-dark)'>{tag}</Pill></p>
     </div>
     <BlogList posts={blogposts} />
-    <div class=" bg-greyer"/>
+    <div class=" bg-greyer dark:bg-dark-greyer"/>
   </main>
 </Layout>

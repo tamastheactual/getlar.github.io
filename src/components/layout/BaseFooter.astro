@@ -10,7 +10,7 @@ const { backToTop = true } = Astro.props;
   <button
     class:list={[
       backToTop ? `backToTop` : null,
-      'transition-300 z-50 opacity-0 fixed flex bottom-[50px] right-[20px] w-10 h-10 bg-tcotta border border-black card-shadow',
+      'transition-300 z-50 opacity-0 fixed flex bottom-[50px] right-[20px] w-10 h-10 bg-tcotta dark:bg-dark-tcotta border border-black dark:border-dark-textcolor shadow-card-shadow',
     ]}
   >
     <svg
@@ -20,7 +20,8 @@ const { backToTop = true } = Astro.props;
       height='100%'
       width='100%'
       stroke-width='1.5'
-      stroke='currentColor'
+      stroke='var(--greyer)'
+      class='dark:stroke-dark-greyer'
     >
       <path
         stroke-linecap='round'
@@ -31,11 +32,11 @@ const { backToTop = true } = Astro.props;
   </button>
 )}
 
-<footer class='bg-navbg text-textcolor flex justify-between p-1 w-full fixed bottom-0 border-t-2 border-textcolor h-8'>
+<footer class='bg-navbg dark:bg-dark-navbg text-textcolor dark:text-dark-textcolor flex justify-between p-1 w-full fixed bottom-0 border-t-2 border-textcolor dark:border-dark-textcolor h-8'>
   <div class="footer-content flex justify-between items-center">
     <p class='outfit'>
       Personal Website: 
-      <a href='https://ko-fi.com/tamastheactual' target='_blank' class='text-tcotta inline-flex items-center'>
+      <a href='https://ko-fi.com/tamastheactual' target='_blank' class='text-tcotta dark:text-dark-tcotta inline-flex items-center font-bold'>
         Buy Me a Ko-fi 
         <span class="i-uil:coffee w-4 h-4 ml-1 inline-block"></span>
       </a>

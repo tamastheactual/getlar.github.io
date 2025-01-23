@@ -22,12 +22,22 @@ const { title, description } = content;
   description={description as string}
   ogImage={ogImage}
 >
-<main class='bg-bgc color-textcolor flex justify-center max-h-fill'>
+<main class='bg-bgcolor dark:bg-dark-bgcolor color-textcolor dark:color-dark-textcolor flex justify-center max-h-fill'>
     <div class='p-6 flex justify-center'>
       <AboutContent content={content}>
         <slot />
       </AboutContent>
     </div>
   </main>
-  <div class="h-[5vh] bg-bgc"/>
+  <div
+  class="bg-bgcolor dark:bg-dark-bgcolor text-textcolor dark:text-dark-textcolor poppins flex justify-center"
+  style="font-size: 12px; max-width: 100%; padding: 0 1rem; text-align: center;"
+>
+  Licensed under&nbsp;
+  <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" class="text-tcotta dark:text-dark-tcotta">
+    CC BY-NC-ND 4.0
+  </a>
+  . © Tamás Takács, 2025.
+</div>
+  <div class="h-[3vh] bg-bgcolor dark:bg-dark-bgcolor" />
 </Layout>

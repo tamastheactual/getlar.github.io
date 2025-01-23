@@ -25,14 +25,26 @@ const { title, description } = content;
   description={description as string}
   ogImage={ogImage}
 >
-  <main class='p-6 lg:grid lg:grid-cols-3 flex justify-center bg-bgc color-textcolor'>
+  <main class='p-6 lg:grid lg:grid-cols-3 flex justify-center bg-bgcolor dark:bg-dark-bgcolor color-textcolor dark:color-dark-textcolor'>
     <BlogSideBar headings={headings} />
     <BlogContent content={content}>
       <slot />
     </BlogContent>
   </main>
-  <section class='p-6 bg-bgc'>
+  <div
+  class="bg-bgcolor dark:bg-dark-bgcolor text-textcolor dark:text-dark-textcolor poppins flex justify-center"
+  style="font-size: 12px; max-width: 100%; padding: 0 1rem; text-align: center;"
+>
+  Licensed under&nbsp;
+  <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" class="text-tcotta dark:text-dark-tcotta">
+    CC BY-NC-ND 4.0
+  </a>
+  . © Tamás Takács, 2025.
+</div>
+  <section class='p-6 bg-bgcolor dark:bg-dark-bgcolor'>
     <RecentBlogPosts count={3} title={title}/>
   </section>
-  <div class="h-[10vh] bg-bgc"/>
+  <div class="h-[3vh] bg-bgcolor dark:bg-dark-bgcolor"/>
 </Layout>
+
+

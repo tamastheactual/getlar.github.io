@@ -13,8 +13,8 @@ const posts = await getCollection('blog').then((collection) =>
   description='tamastheactual posts | on this page you can find a collection of posts'
   pageTitle='tamastheactual posts'
 >
-  <main class='bg-greyer p-6 min-h-screen'>
+  <main class='bg-greyer dark:bg-dark-greyer p-6 min-h-screen'>
     <BlogList posts={posts} />
-    <div class=" bg-greyer"/>
+    <div class=" bg-greyer dark:bg-dark-greyer"/>
   </main>
 </Layout>

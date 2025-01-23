@@ -1,12 +1,13 @@
 ---
 interface Props {
-  color?: string | undefined;
+  color?: string;
+  darkColor?: string;
 }
 
-const { color } = Astro.props;
+const { color, darkColor } = Astro.props;
 ---
 
-<style define:vars={{ color: color}}>
+<style define:vars={{ color: color, darkColor: darkColor ?? color }}>
   span.brutal-pill {
     filter: drop-shadow(3px 3px 0 rgb(0 0 0 / 1));
     user-select: none;
@@ -18,7 +19,7 @@ const { color } = Astro.props;
     font-size: small;
   }
 
-  /* Smaller pill styles when 'smaller' is true */
+  /* Smaller pill styles for smaller screens */
   @media (max-width: 1024px) {
     span.brutal-pill {
       padding: 0.125rem 0.5rem;
@@ -27,12 +28,23 @@ const { color } = Astro.props;
   }
 
   span.brutal-pill:hover {
-    filter: drop-shadow(0px 0px 0 rgb(0 0 0 / 1));
     background-color: var(--tcotta);
+    color: white;
+  }
+
+  /* Dark mode styles */
+  :root.dark span.brutal-pill {
+    background-color: var(--darkColor);
+    border-color: var(--textcolor-dark);
+    color: var(--textcolor-dark);
+  }
+
+  :root.dark span.brutal-pill:hover {
+    background-color: var(--tcotta-dark);
     color: white;
   }
 </style>
 
-<span class='brutal-pill'>
+<span class="brutal-pill">
   <slot />
 </span>

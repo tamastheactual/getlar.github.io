@@ -24,39 +24,31 @@ const formattedYear = pubDate.getFullYear().toString();
   description={post.data.description}
 >
   <div class='flex justify-start my-4'>
-    <Button color='var(--navbg)' href={`/blog/${post.slug}/`}>Read post &rarr;</Button>
+    <Button color='var(--navbg)' darkColor='var(--navbg-dark)' href={`/blog/${post.slug}/`}>Read post &rarr;</Button>
   </div>
 
   <div class='inline-block'>
-    <p class='poppins mt-2 color-textcolor'>Published on: {formattedDate}</p>
+    <p class='poppins mt-2 text-textcolor dark:text-dark-textcolor'>Published on: {formattedDate}</p>
     <div class="flex justify-between items-center pt-1 pb-2">
       <a class="poppins" href={`/blog/years/${formattedYear}/`}>
-        <Pill color='var(--navbg)'>{formattedYear}</Pill>
+        <Pill color='var(--navbg)' darkColor='var(--navbg-dark)'>{formattedYear}</Pill>
       </a>
     </div>
-    <p class='poppins mt-2 color-textcolor font-semibold'>Additional tags:</p>
-    <div class='flex flex-wrap gap-4 mt-2'> <!-- Add flex-wrap here -->
-      <ul class='flex flex-wrap gap-4'> <!-- Add flex-wrap to the ul -->
+    <p class='poppins mt-2 text-textcolor dark:text-dark-textcolor font-semibold'>Additional tags:</p>
+    <div class='flex flex-wrap gap-4 mt-2'>
+      <ul class='flex flex-wrap gap-4'>
         {
           post.data.tags.map((tag) => {
             return (
               <li>
                 <a class="poppins" href={`/blog/tags/${tag.toLowerCase()}/`}>
-                  <Pill color='var(--navbg)'>{tag}</Pill>
+                  <Pill color='var(--navbg)' darkColor='var(--navbg-dark)'>{tag}</Pill>
                 </a>
               </li>
             );
           })
         }
       </ul>
-      {
-        post.data.draft && (
-          <span class='bg-green rounded-full border-2 py-1 px-4 text-sm border-black card-shadow'>
-            Draft
-          </span>
-        )
-      }
     </div>
   </div>
 </SummaryCard>
-
