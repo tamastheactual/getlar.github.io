@@ -72,12 +72,12 @@ const { pageTitle } = Astro.props;
 <header class="border-b-2 border-textcolor dark:border-dark-textcolor flex justify-between p-4 pb-3 items-center bg-navbg dark:bg-dark-navbg h-16">
   {pageTitle && <h1 class='hidden'>{pageTitle}</h1>}
   <a href="/" title="Back to Home" class="flex items-center">
-    <p class="outfit text-2xl md:text-2xl lg:text-2xl text-textcolor dark:text-dark-textcolor pb-1">
+    <p class="outfit text-xl md:text-2xl lg:text-2xl text-textcolor dark:text-dark-textcolor pb-1">
       <span class="lg:hidden">&gt;/tta/</span>
       <span class="hidden lg:inline">&gt;/tamastheactual/</span>
     </p>
-    <svg id="flashing-slash" width="30" height="30" viewBox="0 0 2 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="20" height="30" class="fill-[var(--tcotta)] dark:fill-[var(--tcotta-dark)]" />
+    <svg  id="flashing-slash" width="30" height="30" viewBox="0 0 15 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="10" height="28" class="fill-[var(--tcotta)] dark:fill-[var(--tcotta-dark)]" />
     </svg>
   </a>
   <nav class="hidden md:inline-block">
@@ -132,7 +132,7 @@ const { pageTitle } = Astro.props;
     <h2 class="hidden">Mobile Navigation</h2>
     <ul class="flex gap-3 poppins">
       {navigationItems.map((item) => (
-        item.name !== 'home' &&  item.name !== 'cv' && (
+        item.name !== 'home' && (
           <li class="pt-0.5">
             <a
               class="text-md font-medium hover:text-tcotta dark:hover:text-dark-tcotta hover:underline transition-all duration-500 ease-in-out text-textcolor dark:text-dark-textcolor"
@@ -149,7 +149,7 @@ const { pageTitle } = Astro.props;
       <li>
         <button
           id="theme-toggle-mobile"
-          class="text-textcolor dark:text-dark-textcolor hover:text-tcotta dark:hover:text-dark-tcotta focus:outline-none transition-all flex items-center justify-center"
+          class="hidden md:flex text-textcolor dark:text-dark-textcolor hover:text-tcotta dark:hover:text-dark-tcotta focus:outline-none transition-all flex items-center justify-center"
           title="Toggle Dark/Light Mode"
         >
           <div
