@@ -1,5 +1,4 @@
 import type { Config } from 'tailwindcss';
-const { fontFamily } = require("tailwindcss/defaultTheme");
 
 const config: Config = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
