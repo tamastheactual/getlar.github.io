@@ -48,7 +48,7 @@ Novel reinforcement learning algorithms often face scalability and compatibility
 * <span class="font-extrabold">reinforced positive behavior in early training</span>
 
 <div class="flex justify-center">
-  <img src="posterme.jpg" alt="Me" />
+  <Image src="posterme.jpg" alt="Me" />
 </div>
 
 *Figure 2: <span class="font-extrabold">Me performing at a poster exhibition on a three day Machine Learning Conference in Budapest, Hungary (Magyar Machine learning Találkozó). The event was hosted by [<span class="font-extrabold text-tcotta dark:text-dark-tcotta">[HUN-REN]</span>](https://hun-ren.hu/) in collaboration with  [<span class="font-extrabold text-tcotta dark:text-dark-tcotta">[SZTAKI]</span>](https://sztaki.hun-ren.hu/).</span>*
@@ -69,13 +69,13 @@ Our research improves on this hybrid model by  <span class="font-extrabold">allo
 The Lux AI Environment represents a 2D grid platform tailored for <span class="font-extrabold">Multi-Agent Reinforcement Learning (MARL) research</span> [<span class="font-extrabold text-tcotta dark:text-dark-tcotta">[Chen et al. 2023]</span>](https://arxiv.org/abs/2301.01609), designed to tackle challenges in multi-variable optimization, resource acquisition, and allocation within a competitive 1v1 setting. Beyond optimization, proficient agents are tasked with adeptly analyzing their adversaries and formulating strategic policies to gain a decisive advantage. The environment is fully observed by all agents. For further information on the environment, visit the official competition documentation [<span class="font-extrabold text-tcotta dark:text-dark-tcotta">[Tao, Pan, et al. 2023a]</span>](https://www.kaggle.com/competitions/lux-ai-season-2).
 
 <div class="flex justify-center">
-  <img src="lux.png" alt="Lux Env" />
+  <Image src="lux.png" alt="Lux Env" />
 </div>
 
 *Figure 1: <span class="font-extrabold">A visual representation of the grid environment, generated from a specific seed.</span>*
 
 <div class="flex justify-center">
-  <img src="lux2.png" alt="Lux Env 2" />
+  <Image src="lux2.png" alt="Lux Env 2" />
 </div>
 
 *Figure 2: <span class="font-extrabold">Simplified environment loop of the Lux AI Environment. An episode starts with the Bidding Phase and ends after 1000 steps. The player with the most lichen collected wins.</span>*
@@ -87,13 +87,13 @@ The Lux AI Environment represents a 2D grid platform tailored for <span class="f
 Trajectory separation is a technique used to <span class="font-extrabold">improve credit assignment in multi-agent environments</span> by tracking rewards, critic values, actions, and entropies separately for each entity or group of entities. Instead of aggregating rewards into a single global value, it breaks down each environment step into multiple distinct training examples. This approach allows for more precise attribution of rewards to specific actions, reducing the risk of skewed reward attribution that can occur when dealing with many entities. As a result, it <span class="font-extrabold">enhances the accuracy of backpropagation</span>, reinforcing beneficial behaviors and correcting detrimental ones more effectively.
 
 <div class="flex justify-center">
-  <img src="rewards.png" alt="Trajectory Separation Reward" />
+  <Image src="rewards.png" alt="Trajectory Separation Reward" />
 </div>
 
 *Figure 3: <span class="font-extrabold"> Showing the difference between global rewards (left) and rewards distributed into groups using trajectory separation (right).</span>*
 
 <div class="flex justify-center">
-  <img src="trajsep.png" alt="Trajectory Separation LogProbs" />
+  <Image src="trajsep.png" alt="Trajectory Separation LogProbs" />
 </div>
 
 *Figure 4: <span class="font-extrabold">  Demonstrating policy loss calculation with the extended dimension. The matrices on the image represent a mini-batch consisting of 3 environment steps. Inactive groups are marked.</span>*
@@ -105,13 +105,13 @@ Trajectory separation is a technique used to <span class="font-extrabold">improv
 We developed a global feature extractor to learn a comprehensive mapping from environmental states to actions. This approach allows us to capture a unified behavior pattern, enhanced by the individual actions of agents, thereby achieving emergent collaborative intelligence.
 
 <div class="flex justify-center">
-  <img src="featureextr.png" alt="Global Feature Extractor" />
+  <Image src="featureextr.png" alt="Global Feature Extractor" />
 </div>
 
 *Figure 5: <span class="font-extrabold"> The structure of the final feature extractor and the critic and actor heads utilized on top of M-PPO.</span>*
 
 <div class="flex justify-center">
-  <img src="backprop.png" alt="Backpropagation" />
+  <Image src="backprop.png" alt="Backpropagation" />
 </div>
 
 
@@ -124,14 +124,14 @@ We developed a global feature extractor to learn a comprehensive mapping from en
 In our study, <span class="font-extrabold">we compared our results with other competition submissions, conducted experiments on various credit assignment setups, and performed ablation studies.</span>
 
 <div class="flex justify-center">
-  <img src="result.png" alt="Results for Trajectory Ratios" />
+  <Image src="result.png" alt="Results for Trajectory Ratios" />
 </div>
 
 
 *Figure 7: <span class="font-extrabold"> Results demonstrate the effectiveness of trajectory separation, revealing that higher agent-specific reward weights heavily improve performance. Episode Length indicates team survival duration, while Ice Transferred and Average Factory Alive reflect resource collection efficiency.</span>*
 
 <div class="flex justify-center">
-  <img src="result2.png" alt="Results for Comparison" />
+  <Image src="result2.png" alt="Results for Comparison" />
 </div>
 
 *Figure 8: <span class="font-extrabold"> Table comparing the removal of separated components relevant to the advantage calculation. The metrics featured include the amount of ice transferred by units and the length of the episodes

@@ -26,7 +26,7 @@ Looking ahead, I am excited to complete my **PhD program**. My goal is to become
 
 I also like bouldering. A lot.
 
-<div class="flex justify-center" style="max-width: 100%;">
+<div class="flex justify-center">
   <Image src="climbing.jpg" alt="Climbing" />
 </div>
 
@@ -35,7 +35,7 @@ I also like bouldering. A lot.
 Aaaand I also have a cat...
 
 <div class="flex justify-center">
-  <img src="taro.jpg" alt="Taro" />
+  <Image src="taro.jpg" alt="Taro" />
 </div>
 
 *Taro. Photo: <span class="font-extrabold">Me 😊</span>*
