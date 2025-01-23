@@ -76,7 +76,7 @@ const { pageTitle } = Astro.props;
       <span class="lg:hidden">&gt;/tta/</span>
       <span class="hidden lg:inline">&gt;/tamastheactual/</span>
     </p>
-    <svg class="hidden md:flex" id="flashing-slash" width="30" height="30" viewBox="0 0 15 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg id="flashing-slash" width="30" height="30" viewBox="0 0 15 30" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect width="10" height="28" class="fill-[var(--tcotta)] dark:fill-[var(--tcotta-dark)]" />
     </svg>
   </a>
@@ -132,7 +132,7 @@ const { pageTitle } = Astro.props;
     <h2 class="hidden">Mobile Navigation</h2>
     <ul class="flex gap-3 poppins">
       {navigationItems.map((item) => (
-        item.name !== 'home' && (
+        item.name !== 'home' && item.name !== 'cv' && (
           <li class="md:pt-0.5 lg:pt-0">
             <a
               class="text-md font-medium hover:text-tcotta dark:hover:text-dark-tcotta hover:underline transition-all duration-500 ease-in-out text-textcolor dark:text-dark-textcolor"
