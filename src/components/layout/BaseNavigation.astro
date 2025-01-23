@@ -72,13 +72,14 @@ const { pageTitle } = Astro.props;
 <header class="border-b-2 border-textcolor dark:border-dark-textcolor flex justify-between p-4 pb-3 items-center bg-navbg dark:bg-dark-navbg h-16">
   {pageTitle && <h1 class='hidden'>{pageTitle}</h1>}
   <a href="/" title="Back to Home" class="flex items-center">
-    <p class="outfit text-xl md:text-2xl lg:text-2xl text-textcolor dark:text-dark-textcolor pb-1">
+    <p class="outfit text-lg md:text-xl lg:text-2xl text-textcolor dark:text-dark-textcolor pb-1">
       <span class="lg:hidden">&gt;/tta/</span>
       <span class="hidden lg:inline">&gt;/tamastheactual/</span>
     </p>
-    <svg id="flashing-slash" width="30" height="30" viewBox="0 0 15 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg class="hidden lg:inline" id="flashing-slash" width="30" height="30" viewBox="0 0 15 30" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect width="10" height="28" class="fill-[var(--tcotta)] dark:fill-[var(--tcotta-dark)]" />
     </svg>
+    
   </a>
   <nav class="hidden md:inline-block">
     <ul class="flex lg:gap-8 md:gap-6 poppins">
@@ -149,7 +150,7 @@ const { pageTitle } = Astro.props;
       <li>
         <button
           id="theme-toggle-mobile"
-          class="hidden md:flex text-textcolor dark:text-dark-textcolor hover:text-tcotta dark:hover:text-dark-tcotta focus:outline-none transition-all flex items-center justify-center"
+          class="md:flex text-textcolor dark:text-dark-textcolor hover:text-tcotta dark:hover:text-dark-tcotta focus:outline-none transition-all flex items-center justify-center"
           title="Toggle Dark/Light Mode"
         >
           <div

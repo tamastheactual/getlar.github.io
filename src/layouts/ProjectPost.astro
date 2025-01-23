@@ -32,12 +32,22 @@ hr {
   description={description as string}
   ogImage={ogImage}
 >
-  <main class='p-6 lg:grid lg:grid-cols-3 flex justify-center bg-bgcolor dark:bg-dark-bgcolor color-textcolor dark:color-dark-textcolor'>
+<main class="p-6 grid grid-cols-1 lg:grid-cols-7 gap-6 bg-bgcolor dark:bg-dark-bgcolor color-textcolor dark:color-dark-textcolor">
+  <!-- BlogSideBar collapses to full width on small screens -->
+  <aside class="hidden lg:block lg:col-span-2">
     <ProjectSideBar headings={headings} />
+  </aside>
+
+  <!-- BlogContent takes full width on small screens -->
+  <article class="col-span-1 lg:col-span-3">
     <ProjectContent content={content}>
       <slot />
     </ProjectContent>
-  </main>
+  </article>
+
+  <!-- Empty Right Column collapses on small screens -->
+  <aside class="hidden lg:block lg:col-span-2"></aside>
+</main>
   <div
   class="bg-bgcolor dark:bg-dark-bgcolor text-textcolor dark:text-dark-textcolor poppins flex justify-center"
   style="font-size: 12px; max-width: 100%; padding: 0 1rem; text-align: center;"

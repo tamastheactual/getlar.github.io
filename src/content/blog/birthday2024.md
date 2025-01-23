@@ -82,7 +82,9 @@ Interestingly, I thought I wouldn’t enjoy being the Quiz Master or taking on a
 
 We naturally had a winning team. However, since I had obviously bluffed about a prize, I had to come up with a nonsense story to deflect attention. The rest is history.  
 
-![Results](../../assets/project/dnd24251/quiz.jpg)
+<div class="flex justify-center">
+  <img src="quiz.jpg" alt="Quiz" />
+</div>
 
 *The Quizzes in question. Photo: <span class="font-extrabold">Me 😊</span>*
 
@@ -92,19 +94,25 @@ The following day, we had an amazing hiking trip in Glăvoi.
 
 We climbed...  
 
-![Results](../../assets/project/dnd24251/monkey.JPG)
+<div class="flex justify-center">
+  <img src="monkey.JPG" alt="Monke" />
+</div>
 
 *Monke. Photo: <span class="font-extrabold">Me 😊</span>*
 
 We geocached...
 
-![Results](../../assets/project/dnd24251/geocache.jpg)
+<div class="flex justify-center">
+  <img src="geocache.jpg" alt="Geocache" />
+</div>
 
 *Goldmine. Photo: <span class="font-extrabold">Me 😊</span>*
 
 And we ate at the best little buffet around, called *Costi*, where most of us enjoyed mushroom cream soup made from freshly foraged mushrooms and house-made lángos.
 
-![Results](../../assets/project/dnd24251/us.jpg)
+<div class="flex justify-center">
+  <img src="us.jpg" alt="Us" />
+</div>
 
 *Cold profiles. Photo: <span class="font-extrabold">Me 😊</span>*
 

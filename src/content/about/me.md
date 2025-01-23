@@ -8,7 +8,11 @@ layout: '../../layouts/About.astro'
 
 # <u> About </u>
 
-![Big Me](../../assets/about/bigme.png)
+
+<div class="flex justify-center">
+  <img src="bigme.png" alt="Me" />
+</div>
+
 
 *Green is King. Photo: <span class="font-extrabold">Me 😊</span>*
 
@@ -22,13 +26,17 @@ Looking ahead, I am excited to complete my **PhD program**. My goal is to become
 
 I also like bouldering. A lot.
 
-![Climbing](../../assets/about/climbing.jpg)
+<div class="flex justify-center">
+  <img src="climbing.jpg" alt="Climbing" />
+</div>
 
 *Gravity Boulder. Photo: <span class="font-extrabold">Imre Molnár</span>*
 
 Aaaand I also have a cat...
 
-![Taro](../../assets/about/taro.jpg)
+<div class="flex justify-center">
+  <img src="taro.jpg" alt="Taro" />
+</div>
 
 *Taro. Photo: <span class="font-extrabold">Me 😊</span>*
 

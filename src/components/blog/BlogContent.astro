@@ -10,9 +10,22 @@ const { commitHash, commitDate } = getGitInfo(content.file);
 // Get the word count from the Markdown file
 const wordCount = getWordCountFromFile(content.file);
 
----
 
-<article class="prose-slate dark:prose-light w-sm md:w-prose md:prose poppins p-6">
+---
+<style>
+  .prose {
+    max-width: none;
+  }
+  
+  @media (min-width: 1024px) {
+    .prose {
+      max-width: none;
+      margin: 0 auto;
+    }
+  }
+</style>
+
+<article class="prose prose-slate dark:prose-light poppins p-6 mx-auto max-w-none">
   <a href="/blog/" title="Back to posts" class="hover:text-tcotta dark:hover:text-dark-tcotta transition-all duration-150 ease-in-out text-dark dark:text-light poppins">&larr; Back to posts</a>
   <hr class="border-1 border-t border-tcotta dark:border-dark-tcotta my-3" />
 
