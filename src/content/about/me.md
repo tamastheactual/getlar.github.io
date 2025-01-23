@@ -9,7 +9,7 @@ layout: '../../layouts/About.astro'
 # <u> About </u>
 
 
-<div class="flex justify-center">
+<div class="flex justify-center" client:load>
   <Image loading="lazy" src="bigme.png" alt="Me" />
 </div>
 
@@ -26,7 +26,7 @@ Looking ahead, I am excited to complete my **PhD program**. My goal is to become
 
 I also like bouldering. A lot.
 
-<div class="flex justify-center">
+<div class="flex justify-center" client:load>
   <img decoding="async" src="climbing.jpg" alt="Climbing"/>
 </div>
 
@@ -34,8 +34,8 @@ I also like bouldering. A lot.
 
 Aaaand I also have a cat...
 
-<div class="flex justify-center">
-  <img client:load src="taro.jpg" alt="Taro" />
+<div class="flex justify-center" client:load>
+  <img src="taro.jpg" alt="Taro" />
 </div>
 
 *Taro. Photo: <span class="font-extrabold">Me 😊</span>*
