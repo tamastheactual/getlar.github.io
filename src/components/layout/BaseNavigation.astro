@@ -85,7 +85,7 @@ const { pageTitle } = Astro.props;
     <ul class="flex lg:gap-8 md:gap-6 poppins">
       
       {navigationItems.map((item) => (
-        <li class="md:pt-0.5 lg:pt-0">
+        <li class="pt-0.4 lg:pt-0">
           <a
             class="text-md md:text-md lg:text-lg font-medium hover:text-tcotta hover:underline transition-all duration-500 ease-in-out text-textcolor dark:text-dark-textcolor dark:hover:text-dark-tcotta"
             href={item.url}
@@ -134,7 +134,7 @@ const { pageTitle } = Astro.props;
     <ul class="flex gap-3 poppins">
       {navigationItems.map((item) => (
         item.name !== 'home' && item.name !== 'cv' && (
-          <li class="md:pt-0.5 lg:pt-0">
+          <li class="pt-0.4 lg:pt-0">
             <a
               class="text-md font-medium hover:text-tcotta dark:hover:text-dark-tcotta hover:underline transition-all duration-500 ease-in-out text-textcolor dark:text-dark-textcolor"
               href={item.url}
