@@ -92,6 +92,7 @@ const { pageTitle } = Astro.props;
             title={`Go to ${item.name}`}
             target={item.name === 'cv' ? '_blank' : '_self'}
             rel={item.name === 'cv' ? 'noopener noreferrer' : undefined}
+            data-astro-reload
           >
             {item.name}
           </a>

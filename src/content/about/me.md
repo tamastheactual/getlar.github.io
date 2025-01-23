@@ -26,12 +26,8 @@ Looking ahead, I am excited to complete my **PhD program**. My goal is to become
 
 I also like bouldering. A lot.
 
-<div class="w-full max-w-full overflow-hidden">
-  <Image 
-    src="climbing.jpg" 
-    alt="Climbing" 
-    class="w-full h-auto object-cover"
-  />
+<div class="flex justify-center">
+  <Image loading="lazy" src="climbing.jpg" alt="Climbing"/>
 </div>
 
 *Gravity Boulder. Photo: <span class="font-extrabold">Imre Molnár</span>*
