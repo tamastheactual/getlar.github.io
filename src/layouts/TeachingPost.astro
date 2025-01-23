@@ -1,0 +1,53 @@
+---
+import Layout from './Default.astro';
+import TeachingSideBar from '@components/teaching/TeachingSideBar.astro';
+import TeachingContent from '@components/teaching/TeachingContent.astro';
+
+const ogImage = new URL(`/v1/generate/og/${Astro.params.slug}.png`, Astro.url);
+
+const { content, headings } = Astro.props;
+const { title, description } = content;
+---
+<head>
+  <meta charset="utf-8" />
+  <link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  rel="stylesheet"
+  />
+  <meta name='viewport' content='width=device-width, initial-scale=1' />
+  </head>
+
+<style>
+hr {
+  border: 0;
+  border-top: 1px solid #000000;
+  margin: 1rem 0;
+}
+</style>
+
+
+<Layout
+  title={title as string}
+  description={description as string}
+  ogImage={ogImage}
+>
+  <main class='p-6 lg:grid lg:grid-cols-3 flex justify-center bg-bgcolor dark:bg-dark-bgcolor color-textcolor dark:color-dark-textcolor'>
+    <TeachingSideBar headings={headings} />
+    <TeachingContent content={content}>
+      <slot />
+    </TeachingContent>
+  </main>
+  <div
+  class="bg-bgcolor dark:bg-dark-bgcolor text-textcolor dark:text-dark-textcolor poppins flex justify-center"
+  style="font-size: 12px; max-width: 100%; padding: 0 1rem; text-align: center;"
+>
+  Licensed under&nbsp;
+  <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" class="text-tcotta dark:text-dark-tcotta">
+    CC BY-NC-ND 4.0
+  </a>
+  . © Tamás Takács, 2025.
+</div>
+<div class="h-[3vh] bg-bgcolor dark:bg-dark-bgcolor"/>
+</Layout>
+
+

@@ -1,0 +1,36 @@
+---
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const projectEntries = await getCollection('teaching');
+  return projectEntries.map((teachingpost) => ({
+    params: { slug: teachingpost.slug },
+    props: { teachingpost },
+  }));
+}
+
+interface Props {
+  teachingpost: CollectionEntry<'teaching'>;
+}
+
+const { teachingpost } = Astro.props;
+const { Content } = await teachingpost.render();
+---
+
+<style>
+  /* Apply to the entire page */
+  body {
+      overflow-x: hidden;
+  }
+  
+  /* Apply to specific container if needed */
+  .text-justify {
+      overflow-x: hidden;
+  }
+</style>
+
+
+<div class="text-justify">
+<Content />
+</div>

@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '@layouts/Default.astro';
+import TeachingList from '@components/teaching/TeachingList.astro';
+
+const teachings = await getCollection('teaching').then((collection) =>
+  collection.reverse()
+);
+
+---
+
+
+<Layout
+  title='teachings'
+  description='tamastheactual teachings | on this page you can find a collection of teachings'
+  pageTitle='tamastheactual teachings'
+>
+  <main class='bg-bgcolor dark:bg-dark-bgcolor'>
+    <TeachingList teachings={teachings} />
+  </main>
+</Layout>

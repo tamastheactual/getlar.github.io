@@ -1,0 +1,31 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import TeachingElement from './TeachingElement.astro';
+
+interface Props {
+  teachings: CollectionEntry<'teaching'>[];
+}
+
+const { teachings } = Astro.props;
+---
+
+<main class='bg-bgcolor dark:bg-dark-bgcolor p-6'>
+    <section id='about' class='flex items-start justify-start'>
+        <div class='flex flex-col items-start w-full max-w-8xl p-4'>
+            <div class='w-full'>
+                <ul class='p-0 space-y-8'>
+                    {
+                        teachings.map((teaching) => {
+                            return (
+                                <li>
+                                    <TeachingElement teaching={teaching} color="tcotta"/>
+                                </li>
+                            );
+                        })
+                    }
+                </ul>
+            </div>
+        </div>
+    </section>
+</main>
+

@@ -1,0 +1,78 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import TeachingElement from './TeachingElement.astro';
+import TitleCard from '@components/generic/TitleCard.astro';
+
+interface Props {
+  teachings: CollectionEntry<'teaching'>[];
+  filterHeight?: boolean;
+}
+
+const { teachings, filterHeight = false } = Astro.props;
+
+// Group teachings by course name
+const groupedTeachings = teachings.reduce((acc, teaching) => {
+  const courseName = teaching.data.name || "Unnamed Course"; // Fallback for missing names
+  if (!acc[courseName]) {
+    acc[courseName] = [];
+  }
+  acc[courseName].push(teaching);
+  return acc;
+}, {} as Record<string, CollectionEntry<'teaching'>[]>);
+
+// Sort course names alphabetically
+const sortedCourseNames = Object.keys(groupedTeachings).sort((a, b) => a.localeCompare(b));
+---
+
+<main class="bg-bgcolor dark:bg-dark-bgcolor">
+  <section
+    class="flex flex-col items-center justify-center pt-6 pl-6 pr-6"
+    style={`min-height: ${filterHeight ? 'calc(90vh - 6rem)' : 'calc(100vh - 6rem)'}; padding-bottom: 3rem;`}
+  >
+    <div class="flex flex-col w-full md:w-1/2 max-w-8xl">
+      <TitleCard color="var(--navbg)">
+        <p class="mt-4 outfit text-2xl md:text-4xl lg:text-6xl text-left text-dark dark:text-light">Teachings</p>
+      </TitleCard>
+
+      <div class="w-full mt-12">
+        <ul>
+          {sortedCourseNames.map((courseName) => {
+            // Convert course name to abbreviation (e.g., "Deep Learning" -> "dl")
+            const courseAbbreviation = courseName
+              .split(' ')
+              .map((word) => word[0].toLowerCase())
+              .join('');
+        
+            return (
+              <li>
+                <div class="text-2xl md:text-3xl lg:text-4xl font-mono text-gray-800 dark:text-gray-100 pr-6 mb-4 pt-10">
+                  <a
+                    href={`/teaching/tags/${courseAbbreviation}/`}
+                    class="hover:text-tcotta dark:hover:text-dark-tcotta hover:underline transition-all duration-500 ease-in-out"
+                  >
+                    {courseName}
+                  </a>
+                </div>
+                <ul class="space-y-6">
+                  {groupedTeachings[courseName]
+                    .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
+                    .map((teaching) => (
+                      <li>
+                        <TeachingElement
+                          teaching={teaching}
+                          color="tcotta"
+                          hideYear={true}
+                        />
+                      </li>
+                    ))}
+                </ul>
+              </li>
+            );
+          })}
+        
+          
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>

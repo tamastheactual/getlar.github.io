@@ -8,7 +8,9 @@ const navigationItems = [
   { name: 'about', url: '/about/' },
   { name: 'posts', url: '/blog/' },
   { name: 'projects', url: '/project/' },
+  { name: 'teaching', url: '/teaching/' },
   { name: 'cv', url: '/cv.pdf' },
+
 ];
 
 const socialIcons = [
@@ -25,10 +27,6 @@ const socialIcons = [
   { name: 'LinkedIn', 
     url: 'https://www.linkedin.com/in/ranuon', 
     icon: 'i-uil-linkedin'
-  },
-  { name: 'Ko-fi', 
-    url: 'https://ko-fi.com/getlar', 
-    icon: 'i-uil-coffee'
   },
 ];
 
@@ -134,7 +132,7 @@ const { pageTitle } = Astro.props;
     <h2 class="hidden">Mobile Navigation</h2>
     <ul class="flex gap-3 poppins">
       {navigationItems.map((item) => (
-        item.name !== 'home' && (
+        item.name !== 'home' &&  item.name !== 'cv' && (
           <li class="pt-0.5">
             <a
               class="text-md font-medium hover:text-tcotta dark:hover:text-dark-tcotta hover:underline transition-all duration-500 ease-in-out text-textcolor dark:text-dark-textcolor"

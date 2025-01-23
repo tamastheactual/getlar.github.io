@@ -1,0 +1,96 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '@layouts/Default.astro';
+import TeachingList from '@components/teaching/TeachingList.astro';
+import Pill from '@components/generic/Pill.astro';
+import type { CollectionEntry } from 'astro:content';
+import Button from '@components/generic/Button.astro';
+
+export async function getStaticPaths() {
+  const teachings = await getCollection('teaching');
+
+  const pathsSet = new Set<string>();
+
+  teachings.forEach((teaching) => {
+    // Add semesters (slashes replaced with dashes)
+    if (teaching.data.semester) {
+      const semesterSlug = teaching.data.semester.replace(/\//g, '-');
+      pathsSet.add(semesterSlug);
+    }
+
+    // Add class names (abbreviated)
+    if (teaching.data.name) {
+      const classNameSlug = teaching.data.name
+        .split(' ')
+        .map((word) => word.charAt(0).toLowerCase())
+        .join('');
+      pathsSet.add(classNameSlug);
+    }
+
+    // Add tags as-is
+    teaching.data.tags.forEach((tag) => {
+      pathsSet.add(tag);
+    });
+  });
+
+  return Array.from(pathsSet).map((path) => {
+    return {
+      params: { tag: path },
+      props: {
+        tag: path,
+        teachings: teachings.filter((teaching) => {
+          // Filter for semesters
+          if (teaching.data.semester && teaching.data.semester.replace(/\//g, '-') === path) {
+            return true;
+          }
+          // Filter for class names
+          if (
+            teaching.data.name &&
+            teaching.data.name
+              .split(' ')
+              .map((word) => word.charAt(0).toLowerCase())
+              .join('') === path
+          ) {
+            return true;
+          }
+          // Filter for tags
+          return teaching.data.tags.includes(path);
+        }),
+      },
+    };
+  });
+}
+
+
+
+
+interface Props {
+  tag: string;
+  teachings: CollectionEntry<'teaching'>[];
+}
+
+const { tag, teachings } = Astro.props;
+---
+
+<Layout
+  title={`teachings: ${tag}`}
+  description={`tamastheactual teachings | all teachings tagged with ${tag}`}
+  pageTitle={`tamastheactual teachings | teachings tagged with ${tag}`}
+/>
+<main class="bg-bgcolor dark:bg-dark-bgcolor p-6">
+  <div class="ml-4">
+    <Button href="/teaching/" color="var(--bgcolor)" darkColor="var(--bgcolor-dark)">
+      Go to teachings &rarr;
+    </Button>
+  </div>
+  <div class="ml-4 pt-3">
+    <p class="poppins mt-2 text-textcolor dark:text-dark-textcolor font-semibold">
+      Filtered by Tag: 
+      <Pill color="var(--navbg)" darkColor="var(--navbg-dark)">
+        {tag}
+      </Pill>
+    </p>
+  </div>
+  <TeachingList teachings={teachings} filterHeight={true} />
+</main>
+
