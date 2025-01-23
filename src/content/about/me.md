@@ -10,7 +10,7 @@ layout: '../../layouts/About.astro'
 
 
 <div class="flex justify-center">
-  <img src="bigme.png" alt="Me" />
+  <Image src="bigme.png" alt="Me" />
 </div>
 
 
@@ -27,7 +27,7 @@ Looking ahead, I am excited to complete my **PhD program**. My goal is to become
 I also like bouldering. A lot.
 
 <div class="flex justify-center" style="max-width: 100%;">
-  <img src="climbing.jpg" alt="Climbing" />
+  <Image src="climbing.jpg" alt="Climbing" />
 </div>
 
 *Gravity Boulder. Photo: <span class="font-extrabold">Imre Molnár</span>*
