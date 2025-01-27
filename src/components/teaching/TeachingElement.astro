@@ -42,11 +42,13 @@ const title = teaching.data.title;
 }
 </style>
 
+
+
 <div class="project space-y-2">
   <div class="details flex items-center justify-between">
     <!-- Semester and Title Section -->
     <div class="semester-title flex items-center gap-4">
-      <div class="semester text-sm md:text-md lg:text-lg font-mono text-gray-800 dark:text-gray-100">
+      <div class="semester text-md md:text-lg lg:text-xl font-mono text-gray-800 dark:text-gray-100">
         <a
           href={`/teaching/tags/${semester.replace(/\//g, '-')}/`}
           class="hover:text-tcotta dark:hover:text-dark-tcotta hover:underline transition-all duration-500 ease-in-out"
@@ -54,13 +56,6 @@ const title = teaching.data.title;
           {semester}
         </a>
       </div>
-
-      <a
-        href={`/teaching/${teaching.slug}/`}
-        class="text-sm md:text-base lg:text-lg font-medium hover:text-tcotta hover:underline transition-all duration-500 ease-in-out text-textcolor dark:text-dark-textcolor poppins"
-      >
-        {title}
-      </a>
     </div>
 
     <!-- Centered Pills Section -->
