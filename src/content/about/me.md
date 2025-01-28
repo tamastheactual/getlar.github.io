@@ -10,7 +10,7 @@ layout: '../../layouts/About.astro'
 
 
 <div class="flex justify-center">
-  <Image src="/src/assets/about/bigme.png" alt="Me" />
+  <img src="/src/assets/about/bigme.png" alt="Me" />
 </div>
 
 
@@ -30,7 +30,7 @@ Looking ahead, I am excited to complete my **PhD program**. My goal is to become
 I also like bouldering. A lot.
 
 <div class="flex justify-center">
-  <img src="/climbing.jpg" alt="Climbing" style="max-width:100%"/>
+  <img src="/src/assets/about/bigme.png" alt="Climbing" style="max-width:100%"/>
 </div>
 
 *Gravity Boulder. Photo: <span class="font-extrabold">Imre Molnár</span>*
@@ -38,7 +38,7 @@ I also like bouldering. A lot.
 Aaaand I also have a cat...
 
 <div class="flex justify-center">
-  <img loading="eager" src="/taro.jpg" alt="Taro" style="width:100%"/>
+  <img loading="eager" src="/src/assets/about/bigme.png" alt="Taro" style="width:100%"/>
 </div>
 
 *Taro. Photo: <span class="font-extrabold">Me 😊</span>*
