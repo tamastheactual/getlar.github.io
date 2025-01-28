@@ -3,6 +3,7 @@ import sitemap from '@astrojs/sitemap';
 import UnoCSS from 'unocss/astro';
 import tailwind from "@astrojs/tailwind";
 
+
 // https://astro.build/config
 export default defineConfig({
   // used to generate images
