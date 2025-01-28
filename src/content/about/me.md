@@ -9,12 +9,9 @@ layout: '../../layouts/About.astro'
 # <u> About </u>
 
 
-<div class="flex justify-center">
-  <img src="/public/assets/about/bigme.png" alt="Me" />
-</div>
-
-
-![test](../../assets/about/bigme.png)
+<noscript>
+  <img src="/assets/about/bigme.png" alt="Me" />
+</noscript>
 
 
 *Green is King. Photo: <span class="font-extrabold">Me 😊</span>*
@@ -30,7 +27,7 @@ Looking ahead, I am excited to complete my **PhD program**. My goal is to become
 I also like bouldering. A lot.
 
 <div class="flex justify-center">
-  <img src="/public/assets/about/bigme.png" alt="Climbing" style="max-width:100%"/>
+  <img src="/assets/about/bigme.png" alt="Climbing" style="max-width:100%"/>
 </div>
 
 *Gravity Boulder. Photo: <span class="font-extrabold">Imre Molnár</span>*
@@ -38,7 +35,7 @@ I also like bouldering. A lot.
 Aaaand I also have a cat...
 
 <div class="flex justify-center">
-  <img loading="eager" src="/public/assets/about/bigme.png?v=2" alt="Taro" style="width:100%"/>
+  <img loading="eager" src="/assets/about/bigme.png?v=2" alt="Taro" style="width:100%"/>
 </div>
 
 *Taro. Photo: <span class="font-extrabold">Me 😊</span>*
