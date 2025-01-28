@@ -14,6 +14,9 @@ layout: '../../layouts/About.astro'
 </div>
 
 
+![test](../../assets/about/bigme.png)
+
+
 *Green is King. Photo: <span class="font-extrabold">Me 😊</span>*
 
 I am a PhD student at Eötvös Loránd University researching Machine Unlearning, with **three** years of experience working with **Deep Neural Networks**, **Machine Learning**, and **Reinforcement Learning**. I am also knowledgeable in MLOps, Natural Language Processing (NLP), and Graph Neural Networks. Additionally, I am an instructor at the university, teaching two master's classes in the Department of Artificial Intelligence: Deep Network Development and Collective Intelligence.
