@@ -83,7 +83,7 @@ Interestingly, I thought I wouldn’t enjoy being the Quiz Master or taking on a
 We naturally had a winning team. However, since I had obviously bluffed about a prize, I had to come up with a nonsense story to deflect attention. The rest is history.  
 
 <div class="flex justify-center">
-  <Image loading="lazy" src="quiz.jpg" alt="Quiz" />
+  <img src="/assets/blog/birthday2024/quiz.jpg" alt="Quiz" />
 </div>
 
 *The Quizzes in question. Photo: <span class="font-extrabold">Me 😊</span>*
@@ -95,7 +95,7 @@ The following day, we had an amazing hiking trip in Glăvoi.
 We climbed...  
 
 <div class="flex justify-center">
-  <Image loading="lazy" src="monkey.JPG" alt="Monke" />
+  <img src="/assets/blog/birthday2024/monkey.JPG" alt="Monke" />
 </div>
 
 *Monke. Photo: <span class="font-extrabold">Me 😊</span>*
@@ -103,7 +103,7 @@ We climbed...
 We geocached...
 
 <div class="flex justify-center">
-  <Image loading="lazy" src="geocache.jpg" alt="Geocache" />
+  <img src="/assets/blog/birthday2024/geocache.jpg" alt="Geocache" />
 </div>
 
 *Goldmine. Photo: <span class="font-extrabold">Me 😊</span>*
@@ -111,7 +111,7 @@ We geocached...
 And we ate at the best little buffet around, called *Costi*, where most of us enjoyed mushroom cream soup made from freshly foraged mushrooms and house-made lángos.
 
 <div class="flex justify-center">
-  <Image loading="lazy" src="us.jpg" alt="Us" />
+  <img src="/assets/blog/birthday2024/us.jpg" alt="Us" />
 </div>
 
 *Cold profiles. Photo: <span class="font-extrabold">Me 😊</span>*
