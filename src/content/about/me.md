@@ -38,7 +38,7 @@ I also like bouldering. A lot.
 Aaaand I also have a cat...
 
 <div class="flex justify-center">
-  <img loading="eager" src="/src/assets/about/bigme.png" alt="Taro" style="width:100%"/>
+  <img loading="eager" src="/src/assets/about/bigme.png?v=2" alt="Taro" style="width:100%"/>
 </div>
 
 *Taro. Photo: <span class="font-extrabold">Me 😊</span>*
