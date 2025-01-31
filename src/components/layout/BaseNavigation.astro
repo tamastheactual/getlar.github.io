@@ -168,23 +168,26 @@ const { pageTitle } = Astro.props;
 
 <script>
   function applyTheme() {
-    const storedTheme = localStorage.getItem("theme") || "light";
+  const storedTheme = localStorage.getItem("theme") || "light";
 
-    if (storedTheme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
+  if (storedTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
   }
 
-  function updateIcons() {
-    const desktopIcon = document.getElementById("theme-icon-desktop");
-    const mobileIcon = document.getElementById("theme-icon-mobile");
+  updateIcons(false);
+}
 
-    if (desktopIcon && mobileIcon) {
-      const storedTheme = localStorage.getItem("theme") || "light";
-      const newIconClass = storedTheme === "dark" ? "i-uil-sun" : "i-uil-moon";
+function updateIcons(withAnimation = true) {
+  const desktopIcon = document.getElementById("theme-icon-desktop");
+  const mobileIcon = document.getElementById("theme-icon-mobile");
 
+  if (desktopIcon && mobileIcon) {
+    const storedTheme = localStorage.getItem("theme") || "light";
+    const newIconClass = storedTheme === "dark" ? "i-uil-sun" : "i-uil-moon";
+
+    if (withAnimation) {
       desktopIcon.classList.add("fade-out");
       mobileIcon.classList.add("fade-out");
 
@@ -197,45 +200,47 @@ const { pageTitle } = Astro.props;
           mobileIcon.classList.remove("fade-in");
         }, 300);
       }, 300);
-    }
-  }
-
-  function toggleTheme() {
-    const storedTheme = localStorage.getItem("theme") || "light";
-    const newTheme = storedTheme === "dark" ? "light" : "dark";
-
-    if (newTheme === "dark") {
-      document.documentElement.classList.add("dark");
     } else {
-      document.documentElement.classList.remove("dark");
-    }
-
-    localStorage.setItem("theme", newTheme);
-    updateIcons();
-  }
-
-  function attachThemeToggleListeners() {
-    const desktopToggle = document.getElementById("theme-toggle-desktop");
-    const mobileToggle = document.getElementById("theme-toggle-mobile");
-
-    if (desktopToggle) {
-      desktopToggle.removeEventListener("click", toggleTheme);
-      desktopToggle.addEventListener("click", toggleTheme);
-    }
-
-    if (mobileToggle) {
-      mobileToggle.removeEventListener("click", toggleTheme);
-      mobileToggle.addEventListener("click", toggleTheme);
+      desktopIcon.className = `theme-icon ${newIconClass}`;
+      mobileIcon.className = `theme-icon ${newIconClass}`;
     }
   }
+}
 
+function toggleTheme() {
+  const storedTheme = localStorage.getItem("theme") || "light";
+  const newTheme = storedTheme === "dark" ? "light" : "dark";
+
+  if (newTheme === "dark") {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+  }
+
+  localStorage.setItem("theme", newTheme);
+  updateIcons(true);
+}
+
+function attachThemeToggleListeners() {
+  const desktopToggle = document.getElementById("theme-toggle-desktop");
+  const mobileToggle = document.getElementById("theme-toggle-mobile");
+
+  if (desktopToggle) {
+    desktopToggle.removeEventListener("click", toggleTheme);
+    desktopToggle.addEventListener("click", toggleTheme);
+  }
+
+  if (mobileToggle) {
+    mobileToggle.removeEventListener("click", toggleTheme);
+    mobileToggle.addEventListener("click", toggleTheme);
+  }
+}
+
+applyTheme();
+attachThemeToggleListeners();
+
+document.addEventListener("astro:after-swap", () => {
   applyTheme();
-  updateIcons();
   attachThemeToggleListeners();
-
-  document.addEventListener("astro:after-swap", () => {
-    applyTheme();
-    updateIcons();
-    attachThemeToggleListeners();
-  });
+});
 </script>
