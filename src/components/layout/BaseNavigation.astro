@@ -177,65 +177,80 @@ const { pageTitle } = Astro.props;
     }
   }
 
-  function updateIcons() {
+  function updateIcons(triggeredByUser = false) {
     const desktopIcon = document.getElementById("theme-icon-desktop");
     const mobileIcon = document.getElementById("theme-icon-mobile");
 
     if (desktopIcon && mobileIcon) {
-      const storedTheme = localStorage.getItem("theme") || "light";
-      const newIconClass = storedTheme === "dark" ? "i-uil-sun" : "i-uil-moon";
+        const storedTheme = localStorage.getItem("theme") || "light";
+        const newIconClass = storedTheme === "dark" ? "i-uil-sun" : "i-uil-moon";
 
-      desktopIcon.classList.add("fade-out");
-      mobileIcon.classList.add("fade-out");
+        // Check if this is the first user interaction
+        const firstInteraction = localStorage.getItem("firstThemeInteraction");
 
-      setTimeout(() => {
-        desktopIcon.className = `theme-icon ${newIconClass} fade-in`;
-        mobileIcon.className = `theme-icon ${newIconClass} fade-in`;
+        if (triggeredByUser && !firstInteraction) {
+            // Set the flag to prevent further initial animations
+            localStorage.setItem("firstThemeInteraction", "true");
+        }
 
-        setTimeout(() => {
-          desktopIcon.classList.remove("fade-in");
-          mobileIcon.classList.remove("fade-in");
-        }, 300);
-      }, 300);
+        if (triggeredByUser || firstInteraction) {
+            // Apply fade-out and fade-in animation only if triggered by user action
+            desktopIcon.classList.add("fade-out");
+            mobileIcon.classList.add("fade-out");
+
+            setTimeout(() => {
+                desktopIcon.className = `theme-icon ${newIconClass} fade-in`;
+                mobileIcon.className = `theme-icon ${newIconClass} fade-in`;
+
+                setTimeout(() => {
+                    desktopIcon.classList.remove("fade-in");
+                    mobileIcon.classList.remove("fade-in");
+                }, 300);
+            }, 300);
+        } else {
+            // Set the class without animation on page load
+            desktopIcon.className = `theme-icon ${newIconClass}`;
+            mobileIcon.className = `theme-icon ${newIconClass}`;
+        }
     }
-  }
+}
 
-  function toggleTheme() {
+function toggleTheme() {
     const storedTheme = localStorage.getItem("theme") || "light";
     const newTheme = storedTheme === "dark" ? "light" : "dark";
 
-    if (newTheme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
+    document.documentElement.classList.toggle("dark", newTheme === "dark");
 
     localStorage.setItem("theme", newTheme);
-    updateIcons();
-  }
 
-  function attachThemeToggleListeners() {
+    // Call updateIcons with a flag indicating it's a user-triggered action
+    updateIcons(true);
+}
+
+function attachThemeToggleListeners() {
     const desktopToggle = document.getElementById("theme-toggle-desktop");
     const mobileToggle = document.getElementById("theme-toggle-mobile");
 
     if (desktopToggle) {
-      desktopToggle.removeEventListener("click", toggleTheme);
-      desktopToggle.addEventListener("click", toggleTheme);
+        desktopToggle.removeEventListener("click", toggleTheme);
+        desktopToggle.addEventListener("click", toggleTheme);
     }
 
     if (mobileToggle) {
-      mobileToggle.removeEventListener("click", toggleTheme);
-      mobileToggle.addEventListener("click", toggleTheme);
+        mobileToggle.removeEventListener("click", toggleTheme);
+        mobileToggle.addEventListener("click", toggleTheme);
     }
-  }
+}
 
-  applyTheme();
-  updateIcons();
-  attachThemeToggleListeners();
+// Initial execution
+applyTheme();
+updateIcons(); // No animation on load
+attachThemeToggleListeners();
 
-  document.addEventListener("astro:after-swap", () => {
+document.addEventListener("astro:after-swap", () => {
     applyTheme();
-    updateIcons();
+    updateIcons(); // No animation on load
     attachThemeToggleListeners();
-  });
+});
+
 </script>
